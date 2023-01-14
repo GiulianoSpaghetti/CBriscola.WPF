@@ -1,0 +1,101 @@
+﻿<Window x:Class="CBriscola.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CBriscola.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="Applicazione">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="NomeUtente" Content="Nome Utente" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" />
+            <Image x:Name="Utente0" Grid.Row="1" Grid.Column="0" MouseDown="Image_Tapped"/>
+            <Image x:Name="Utente1" Grid.Row="1"  Grid.Column="1" MouseDown="Image_Tapped" />
+            <Image x:Name="Utente2" Grid.Row="1"  Grid.Column="2" MouseDown="Image_Tapped" />
+            <Image x:Name="Giocata0" Grid.Row="2" Grid.Column="0" />
+            <Image x:Name="Giocata1" Grid.Row="2" Grid.Column="1" />
+            <Image x:Name="Cpu0" Grid.Row="3" Grid.Column="0" />
+            <Image x:Name="Cpu1" Grid.Row="3" Grid.Column="1" />
+            <Image x:Name="Cpu2" Grid.Row="3" Grid.Column="2" />
+            <Label x:Name="NomeCpu" Content="Nome Cpu" Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" />
+            <Label x:Name="PuntiUtente" Content="Punti dell'utente" Grid.Row="0" Grid.Column="4" />
+            <Label x:Name="PuntiCpu" Content="Punti della Cpu" Grid.Row="1" Grid.Column="4" />
+            <Label x:Name="NelMazzoRimangono" Content="Nel Mazzo Rimangono" Grid.Row="2" Grid.Column="4" />
+            <Label x:Name="CartaBriscola" Content="Il seme di briscola è" Grid.Row="3" Grid.Column="4" />
+            <Image x:Name="Briscola" Grid.Row="4" Grid.Column="4" />
+            <Button x:Name="AppInformazioni" Content="Informazioni" Grid.Row="5" Grid.Column="0" Click="OnInfo_Click" />
+            <Button x:Name="AppOpzioni" Content="Opzioni" Grid.Row="5" Grid.Column="1" Click="OnOpzioni_Click" />
+        </Grid>
+        <Grid x:Name="Info" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Content="CBriscola versione 0.3" Grid.Row="0" />
+            <Label Content="Autore: Giulio Sorrentino" Grid.Row="1" />
+            <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="2"/>
+            <Button Content="https://github.com/numerunix/CBriscola.maui" Click="OnSito_Click" Grid.Row="3" />
+            <Button x:Name="InfoApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="4"/>
+        </Grid>
+        <Grid x:Name="GOpzioni" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label x:Name="opNomeUtente" Grid.Row="0" Grid.Column="0"/>
+            <TextBox x:Name="txtNomeUtente" Grid.Row="0" Grid.Column="1" />
+            <Label x:Name="opNomeCpu" Grid.Row="1" Grid.Column="0" />
+            <TextBox x:Name="txtCpu" Grid.Row="1" Grid.Column="1" />
+            <TextBox x:Name="txtSecondi" Grid.Row="2" Grid.Column="1" />
+            <Label x:Name="Secondi" Grid.Row="2" Grid.Column="0" />
+            <CheckBox x:Name="cbCartaBriscola" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="True" />
+            <Label x:Name="lbCartaBriscola" Grid.Row="3" Grid.Column="1" />
+            <CheckBox x:Name="cbAvvisaTallone" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="True" />
+            <Label x:Name="lbAvvisaTallone" Grid.Row="4" Grid.Column="1" />
+            <Button Content="OK" Click="OnOk_Click"  Grid.Row="4" Grid.Column="1"/>
+            <Button x:Name="OpzioniApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="5" Grid.Column="0"/>
+            <Button x:Name="OpzioniInformazioni" Content="Informazioni" Grid.Row="5" Grid.Column="1" Click="OnInfo_Click" />
+        </Grid>
+        <Grid x:Name="FinePartita" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="fpRisultrato" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Button Content="Ok" Click="OnOkFp_Click" Grid.Row="1" Grid.Column="0"/>
+            <Button Content="Cancel" Click="OnCancelFp_Click" Grid.Row="1" Grid.Column="1" />
+            <Button Content="Share" Click="OnFPShare_Click" Grid.Row="1" Grid.Column="2" />
+        </Grid>
+    </Grid>
+</Window>
