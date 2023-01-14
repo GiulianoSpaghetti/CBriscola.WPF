@@ -51,7 +51,7 @@
             <Label Content="CBriscola versione 0.3" Grid.Row="0" />
             <Label Content="Autore: Giulio Sorrentino" Grid.Row="1" />
             <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="2"/>
-            <Button Content="https://github.com/numerunix/CBriscola.maui" Click="OnSito_Click" Grid.Row="3" />
+            <Button Content="https://github.com/numerunix/CBriscola.WPF" Click="OnSito_Click" Grid.Row="3" />
             <Button x:Name="InfoApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="4"/>
         </Grid>
         <Grid x:Name="GOpzioni" Visibility="Collapsed">
