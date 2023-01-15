@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Image = System.Windows.Controls.Image;
@@ -25,10 +28,10 @@ namespace CBriscola.WPF
         public MainWindow()
         {
             this.InitializeComponent();
-            cartaCpu.Source =new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\Napoletano\\retro carte pc.png"));
             e = new elaboratoreCarteBriscola(briscolaDaPunti);
             m = new mazzo(e);
-            carta.inizializza(40, cartaHelperBriscola.getIstanza(e));
+            cartaCpu.Source = new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\"+m.getNome()+"\\retro carte pc.png"));
+            carta.inizializza(40, cartaHelperBriscola.getIstanza(e), m);
             g = new giocatore(new giocatoreHelperUtente(), "Giulio", 3);
             cpu = new giocatore(new giocatoreHelperCpu(elaboratoreCarteBriscola.getCartaBriscola()), "Cpu", 3);
             primo = g;
@@ -169,6 +172,12 @@ namespace CBriscola.WPF
         }
         private void OnOpzioni_Click(object sender, EventArgs e)
         {
+            String dirs = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)+"\\wxBriscola\\Mazzi";
+            List<String> mazzi=new List<String>(Directory.EnumerateDirectories(dirs));
+            mazzi.Sort();
+            lsmazzi.Items.Clear();
+            foreach (var s in mazzi)
+            lsmazzi.Items.Add(s.Substring(s.LastIndexOf("\\")+1));
             Info.Visibility = Visibility.Collapsed;
             Applicazione.Visibility = Visibility.Collapsed;
             GOpzioni.Visibility = Visibility.Visible;
@@ -292,8 +301,26 @@ namespace CBriscola.WPF
             t.Interval = TimeSpan.FromSeconds(secondi);
             NomeUtente.Content = g.getNome();
             NomeCpu.Content = cpu.getNome();
+            if (lsmazzi.SelectedValue != null)
+            {
+                m.setNome(lsmazzi.SelectedValue.ToString());
+                carta.CaricaImmagini(m.getNome(), 40, cartaHelperBriscola.getIstanza(e));
+                Utente0.Source = g.getImmagine(0);
+                Utente1.Source = g.getImmagine(1);
+                Utente2.Source = g.getImmagine(2);
+
+                briscola = carta.getCarta(elaboratoreCarteBriscola.getCartaBriscola());
+                Briscola.Source = briscola.getImmagine();
+                cartaCpu.Source = new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\" + m.getNome() + "\\retro carte pc.png"));
+                Cpu0.Source = cartaCpu.Source;
+                Cpu1.Source = cartaCpu.Source;
+                Cpu2.Source = cartaCpu.Source;
+                CartaBriscola.Content = $"Il seme di briscola è: {briscola.getSemeStr()}";
+            }
+
             GOpzioni.Visibility = Visibility.Collapsed;
             Applicazione.Visibility = Visibility.Visible;
+         
         }
 
         private void OnFPShare_Click(object sender, EventArgs e)

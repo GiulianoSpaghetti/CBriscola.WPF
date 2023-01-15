@@ -15,6 +15,7 @@ namespace CBriscola
         private UInt16[] carte;
         private UInt16 numeroCarte;
         private elaboratoreCarte elaboratore;
+        private String nome;
         private void mischia()
         {
             for (numeroCarte = 0; numeroCarte < 40; numeroCarte++)
@@ -25,6 +26,7 @@ namespace CBriscola
         {
             elaboratore = e;
             carte = new UInt16[40];
+            nome = "Napoletano";
             mischia();
         }
         public UInt16 getNumeroCarte() { return numeroCarte; }
@@ -35,5 +37,8 @@ namespace CBriscola
             UInt16 c = carte[--numeroCarte];
             return c;
         }
+
+        public String getNome() { return nome; }
+        public void setNome(String s) { nome = s; }
     };
 }

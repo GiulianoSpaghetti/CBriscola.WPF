@@ -39,14 +39,24 @@ namespace CBriscola {
 			}
 			return valore;
 		}
-		public string getSemeStr(UInt16 carta) {
+		public string getSemeStr(UInt16 carta, String mazzo) {
 			string s = "a";
-			switch (carta / 10) {
-				case 0: s = "bastoni"; break;
-                case 1: s = "coppe"; break;
-                case 2: s = "denari"; break;
-                case 3: s = "spade"; break;
-            }
+            if (mazzo == "Bergamasco" || mazzo == "Bolognese" || mazzo == "Bresciano" || mazzo == "Napoletano" || mazzo == "Romagnolo" || mazzo == "Sardo" || mazzo == "Siciliano" || mazzo == "Trientino" || mazzo == "Trevigiano" || mazzo == "Trentino" || mazzo == "Triestino")
+                switch (carta / 10)
+                {
+                    case 0: s = "bastoni"; break;
+                    case 1: s = "coppe"; break;
+                    case 2: s = "denari"; break;
+                    case 3: s = "spade"; break;
+                }
+			else
+				switch(carta /10)
+				{
+                    case 0: s = "Fiori"; break;
+                    case 1: s = "Quadri"; break;
+                    case 2: s = "Cuori"; break;
+                    case 3: s = "Picche"; break;
+                }
             return s;
 		}
 

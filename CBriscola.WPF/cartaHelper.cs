@@ -15,7 +15,7 @@ namespace CBriscola
 		UInt16 getSeme(UInt16 carta);
 		UInt16 getValore(UInt16 carta);
 		UInt16 getPunteggio(UInt16 carta);
-		string getSemeStr(UInt16 carta);
+		string getSemeStr(UInt16 carta, String mazzo);
 		UInt16 getNumero(UInt16 seme, UInt16 valore);
 	};
 }

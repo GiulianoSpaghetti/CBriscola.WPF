@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CBriscola.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1280" Width="1024">
     <Grid>
         <Grid x:Name="Applicazione">
             <Grid.RowDefinitions>
@@ -48,7 +48,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="CBriscola versione 0.3" Grid.Row="0" />
+            <Label Content="CBriscola versione 0.4 beta" Grid.Row="0" />
             <Label Content="Autore: Giulio Sorrentino" Grid.Row="1" />
             <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="2"/>
             <Button Content="https://github.com/numerunix/CBriscola.WPF" Click="OnSito_Click" Grid.Row="3" />
@@ -67,6 +67,7 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <Label x:Name="opNomeUtente" Grid.Row="0" Grid.Column="0"/>
             <TextBox x:Name="txtNomeUtente" Grid.Row="0" Grid.Column="1" />
@@ -78,9 +79,11 @@
             <Label x:Name="lbCartaBriscola" Grid.Row="3" Grid.Column="1" />
             <CheckBox x:Name="cbAvvisaTallone" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="True" />
             <Label x:Name="lbAvvisaTallone" Grid.Row="4" Grid.Column="1" />
-            <Button Content="OK" Click="OnOk_Click"  Grid.Row="4" Grid.Column="1"/>
-            <Button x:Name="OpzioniApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="5" Grid.Column="0"/>
-            <Button x:Name="OpzioniInformazioni" Content="Informazioni" Grid.Row="5" Grid.Column="1" Click="OnInfo_Click" />
+            <Label x:Name="lbmazzi" Content="Mazzi" Grid.Row="4" Grid.Column="0" />
+            <ListBox x:Name="lsmazzi" Grid.Row="4" Grid.Column="1" />
+            <Button Content="OK" Click="OnOk_Click"  Grid.Row="5" Grid.Column="1"/>
+            <Button x:Name="OpzioniApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="6" Grid.Column="0"/>
+            <Button x:Name="OpzioniInformazioni" Content="Informazioni" Grid.Row="6" Grid.Column="1" Click="OnInfo_Click" />
         </Grid>
         <Grid x:Name="FinePartita" Visibility="Collapsed">
             <Grid.RowDefinitions>
