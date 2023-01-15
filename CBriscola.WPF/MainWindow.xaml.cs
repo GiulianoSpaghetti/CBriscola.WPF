@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Image = System.Windows.Controls.Image;
@@ -92,6 +91,8 @@ namespace CBriscola.WPF
                     {
                         NelMazzoRimangono.Visibility = Visibility.Collapsed;
                         Briscola.Visibility = Visibility.Collapsed;
+                        if (m.getNumeroCarte() == 2 && avvisaTalloneFinito)
+                            new ToastContentBuilder().AddArgument((string)this.FindResource("TalloneFinito") as string).AddText((string)this.FindResource("IlTalloneEFinito") as String).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                     }
                     Utente0.Source = g.getImmagine(0);
                     if (cpu.getNumeroCarte() > 1)
@@ -115,8 +116,11 @@ namespace CBriscola.WPF
                     if (primo == cpu)
                     {
                         i1 = giocaCpu();
+                        if (cpu.getCartaGiocata().stessoSeme(briscola))
+                            new ToastContentBuilder().AddArgument((string)this.FindResource("GiocataBriscola") as string).AddText($"{(string)this.FindResource("LaCpuHaGiocatoIl") as string} {cpu.getCartaGiocata().getValore() + 1} {(string)this.FindResource("DiBriscola") as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                        else if (cpu.getCartaGiocata().getPunteggio() > 0)
+                            new ToastContentBuilder().AddArgument((string)this.FindResource("GiocataCartaDiValore") as string).AddText($"{(string)this.FindResource("LaCpuHaGiocatoIl") as string} {cpu.getCartaGiocata().getValore() + 1} {(string)this.FindResource("di") as string} {cpu.getCartaGiocata().getSemeStr()}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                     }
-
                 }
                 else
                 {

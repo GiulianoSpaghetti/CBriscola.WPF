@@ -9,6 +9,7 @@
 
 
 using CBriscola.WPF;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -74,8 +75,8 @@ namespace CBriscola
 					carte[i].img = new BitmapImage(new Uri(s + m.getNome() + "\\" + i + ".png"));
 				} catch (System.IO.FileNotFoundException ex)
 				{
-					MessageBox.Show(ex.Message+"\n"+mw.FindResource("CaricatoNapoletano")+".", "Errore");
-					m.setNome("Napoletano");
+                        new ToastContentBuilder().AddArgument((string)mw.FindResource("MazzoIncompleto") as string).AddText($"{(string)mw.FindResource("CaricatoNapoletano") as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                        m.setNome("Napoletano");
 					CaricaImmagini(m, n, helper, mw);
 					return;
                 }

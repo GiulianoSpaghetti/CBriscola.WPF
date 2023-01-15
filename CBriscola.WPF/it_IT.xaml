@@ -34,5 +34,13 @@
     <system:String x:Key="Quadri">Quadri</system:String>
     <system:String x:Key="Fiori">Fiori</system:String>
     <system:String x:Key="Picche">Picche</system:String>
-    <system:String x:Key="CaricatoNapoletano">Verrà caricato il mazzo Napoletano</system:String>
+    <system:String x:Key="MazzoIncompleto">Il mazzo è incompleto</system:String>
+    <system:String x:Key="CaricatoNapoletano">Il mazzo è incompleto. Verrà caricato il mazzo Napoletano</system:String>
+    <system:String x:Key="TalloneFinito">Tallone Finito</system:String>
+    <system:String x:Key="IlTalloneEFinito">Il tallone è finito</system:String>
+    <system:String x:Key="GiocataBriscola">Giocata Briscola</system:String>
+    <system:String x:Key="LaCpuHaGiocatoIl">La CPU ha giocato il</system:String>
+    <system:String x:Key="DiBriscola">di Briscola</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Giocata carta di valore</system:String>
+    <system:String x:Key="di">di</system:String>
 </ResourceDictionary>
