@@ -7,6 +7,7 @@
  *
  */
 
+using CBriscola.WPF;
 using System;
 
 namespace CBriscola {
@@ -39,23 +40,23 @@ namespace CBriscola {
 			}
 			return valore;
 		}
-		public string getSemeStr(UInt16 carta, String mazzo) {
+		public string getSemeStr(UInt16 carta, String mazzo, MainWindow mw) {
 			string s = "a";
             if (mazzo == "Bergamasco" || mazzo == "Bolognese" || mazzo == "Bresciano" || mazzo == "Napoletano" || mazzo == "Romagnolo" || mazzo == "Sardo" || mazzo == "Siciliano" || mazzo == "Trientino" || mazzo == "Trevigiano" || mazzo == "Trentino" || mazzo == "Triestino")
                 switch (carta / 10)
                 {
-                    case 0: s = "bastoni"; break;
-                    case 1: s = "coppe"; break;
-                    case 2: s = "denari"; break;
-                    case 3: s = "spade"; break;
+                    case 0: s = (String)mw.FindResource("bastoni") as String; break;
+                    case 1: s = (String)mw.FindResource("coppe") as String; break;
+                    case 2: s = (String)mw.FindResource("denari") as String; break;
+                    case 3: s = (String)mw.FindResource("spade") as String; break;
                 }
 			else
 				switch(carta /10)
 				{
-                    case 0: s = "Fiori"; break;
-                    case 1: s = "Quadri"; break;
-                    case 2: s = "Cuori"; break;
-                    case 3: s = "Picche"; break;
+                    case 0: s = (String)mw.FindResource("Fiori") as String; break;
+                    case 1: s = (String)mw.FindResource("Quadri") as String; break;
+                    case 2: s = (String)mw.FindResource("Cuori") as String; break;
+                    case 3: s = (String)mw.FindResource("Picche") as String; break;
                 }
             return s;
 		}

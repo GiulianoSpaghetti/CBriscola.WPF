@@ -6,8 +6,9 @@
  *  Copyright 2022 Some rights reserved.
  *
  */
- 
- using System;
+
+using CBriscola.WPF;
+using System;
 namespace CBriscola
 {
 	interface cartaHelper
@@ -15,7 +16,7 @@ namespace CBriscola
 		UInt16 getSeme(UInt16 carta);
 		UInt16 getValore(UInt16 carta);
 		UInt16 getPunteggio(UInt16 carta);
-		string getSemeStr(UInt16 carta, String mazzo);
+		string getSemeStr(UInt16 carta, String mazzo, MainWindow mw);
 		UInt16 getNumero(UInt16 seme, UInt16 valore);
 	};
 }

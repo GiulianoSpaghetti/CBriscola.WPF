@@ -8,6 +8,7 @@
  */
 
 
+using CBriscola.WPF;
 using System;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -28,11 +29,11 @@ namespace CBriscola
 			valore = helper.getValore(n);
 			punteggio = helper.getPunteggio(n);
 		}
-		public static void inizializza(UInt16 n, cartaHelperBriscola h, mazzo m) {
+		public static void inizializza(UInt16 n, cartaHelperBriscola h, mazzo m, MainWindow mw) {
 			for (UInt16 i = 0; i < n; i++) {
 				carte[i] = new carta(i, h, m);
             }
-            CaricaImmagini(m.getNome(), n, h);
+            CaricaImmagini(m.getNome(), n, h, mw);
         }
         public static carta getCarta(UInt16 quale) { return carte[quale]; }
 		public UInt16 getSeme() { return seme; }
@@ -62,7 +63,7 @@ namespace CBriscola
 			return img;
 		}
 
-		public static void CaricaImmagini(string mazzo, UInt16 n, cartaHelperBriscola helper)
+		public static void CaricaImmagini(string mazzo, UInt16 n, cartaHelperBriscola helper, MainWindow mw)
 		{
 			String s = "C:\\Program Files\\wxBriscola\\Mazzi\\";
 			for (UInt16 i = 0; i < n; i++)
@@ -75,7 +76,7 @@ namespace CBriscola
 					MessageBox.Show(ex.Message, "Errore");
                     System.Windows.Application.Current.Shutdown();
                 }
-                carte[i].semeStr = helper.getSemeStr(i, mazzo);
+                carte[i].semeStr = helper.getSemeStr(i, mazzo, mw);
 			}
         }
     }
