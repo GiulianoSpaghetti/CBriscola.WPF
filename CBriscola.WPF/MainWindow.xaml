@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CBriscola.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1280" Width="1024">
+        Title="Cbriscola in WPF" Height="1280" Width="1024">
     <Grid>
         <Grid x:Name="Applicazione">
             <Grid.RowDefinitions>
