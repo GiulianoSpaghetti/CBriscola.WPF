@@ -31,7 +31,7 @@ namespace CBriscola.WPF
             this.InitializeComponent();
             e = new elaboratoreCarteBriscola(briscolaDaPunti);
             m = new mazzo(e);
-            cartaCpu.Source = new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\"+m.getNome()+"\\retro carte pc.png"));
+            cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
             carta.inizializza(40, cartaHelperBriscola.getIstanza(e), m, this);
             g = new giocatore(new giocatoreHelperUtente(), "Giulio", 3);
             cpu = new giocatore(new giocatoreHelperCpu(elaboratoreCarteBriscola.getCartaBriscola()), "Cpu", 3);
@@ -175,6 +175,8 @@ namespace CBriscola.WPF
         {
             String dirs = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)+"\\wxBriscola\\Mazzi";
             List<String> mazzi=new List<String>(Directory.EnumerateDirectories(dirs));
+            if (!mazzi.Contains("Napoletano"))
+                mazzi.Add("\\Napoletano");
             mazzi.Sort();
             lsmazzi.Items.Clear();
             foreach (var s in mazzi)
@@ -187,6 +189,7 @@ namespace CBriscola.WPF
             txtSecondi.Text = secondi.ToString();
             cbCartaBriscola.IsChecked = briscolaDaPunti;
             cbAvvisaTallone.IsChecked = avvisaTalloneFinito;
+            mazzi.Clear();
         }
 
         private void OnOkFp_Click(object sender, EventArgs evt)
@@ -310,14 +313,18 @@ namespace CBriscola.WPF
             if (lsmazzi.SelectedValue != null)
             {
                 m.setNome(lsmazzi.SelectedValue.ToString());
-                carta.CaricaImmagini(m.getNome(), 40, cartaHelperBriscola.getIstanza(e), this);
+                carta.CaricaImmagini(m, 40, cartaHelperBriscola.getIstanza(e), this);
                 Utente0.Source = g.getImmagine(0);
                 Utente1.Source = g.getImmagine(1);
                 Utente2.Source = g.getImmagine(2);
 
                 briscola = carta.getCarta(elaboratoreCarteBriscola.getCartaBriscola());
                 Briscola.Source = briscola.getImmagine();
-                cartaCpu.Source = new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\" + m.getNome() + "\\retro carte pc.png"));
+                if (m.getNome() != "Napoletano") 
+                    cartaCpu.Source = new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\" + m.getNome() + "\\retro carte pc.png"));
+                else
+                    cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
+
                 Cpu0.Source = cartaCpu.Source;
                 Cpu1.Source = cartaCpu.Source;
                 Cpu2.Source = cartaCpu.Source;

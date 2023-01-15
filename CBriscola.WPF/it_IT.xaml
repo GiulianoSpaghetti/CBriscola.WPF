@@ -34,4 +34,5 @@
     <system:String x:Key="Quadri">Quadri</system:String>
     <system:String x:Key="Fiori">Fiori</system:String>
     <system:String x:Key="Picche">Picche</system:String>
+    <system:String x:Key="CaricatoNapoletano">Verrà caricato il mazzo Napoletano</system:String>
 </ResourceDictionary>

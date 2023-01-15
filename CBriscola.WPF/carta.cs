@@ -33,7 +33,7 @@ namespace CBriscola
 			for (UInt16 i = 0; i < n; i++) {
 				carte[i] = new carta(i, h, m);
             }
-            CaricaImmagini(m.getNome(), n, h, mw);
+            CaricaImmagini(m, n, h, mw);
         }
         public static carta getCarta(UInt16 quale) { return carte[quale]; }
 		public UInt16 getSeme() { return seme; }
@@ -63,20 +63,26 @@ namespace CBriscola
 			return img;
 		}
 
-		public static void CaricaImmagini(string mazzo, UInt16 n, cartaHelperBriscola helper, MainWindow mw)
+		public static void CaricaImmagini(mazzo m, UInt16 n, cartaHelperBriscola helper, MainWindow mw)
 		{
 			String s = "C:\\Program Files\\wxBriscola\\Mazzi\\";
 			for (UInt16 i = 0; i < n; i++)
 			{
+				if (m.getNome()!="Napoletano")
 				try
 				{
-					carte[i].img = new BitmapImage(new Uri(s + mazzo + "\\" + i + ".png"));
+					carte[i].img = new BitmapImage(new Uri(s + m.getNome() + "\\" + i + ".png"));
 				} catch (System.IO.FileNotFoundException ex)
 				{
-					MessageBox.Show(ex.Message, "Errore");
-                    System.Windows.Application.Current.Shutdown();
+					MessageBox.Show(ex.Message+"\n"+mw.FindResource("CaricatoNapoletano")+".", "Errore");
+					m.setNome("Napoletano");
+					CaricaImmagini(m, n, helper, mw);
+					return;
                 }
-                carte[i].semeStr = helper.getSemeStr(i, mazzo, mw);
+				else
+                    carte[i].img = new BitmapImage(new Uri("pack://application:,,,/resources/images/" + i + ".png"));
+
+                carte[i].semeStr = helper.getSemeStr(i, m.getNome(), mw);
 			}
         }
     }
