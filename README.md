@@ -16,6 +16,8 @@ Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e co
 <img width="759" alt="2023-01-15 (2)" src="https://user-images.githubusercontent.com/49764967/212604550-cff500bf-0276-47c4-a679-cb4d9884b317.png">
 <img width="759" alt="2023-01-15" src="https://user-images.githubusercontent.com/49764967/212604554-e22349b5-4fe4-4911-adc8-fa11befccacf.png">
 
+# Dedica
+Voglio dedicare l'intero progetto non a Francesca la barista, ma a quella gentil donzella che resterà un mistero che mi ha aiutato a rivisondoli.
 
 # Bibliografia
 https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
