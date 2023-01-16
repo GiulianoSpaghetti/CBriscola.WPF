@@ -5,7 +5,7 @@ La CBriscola in WPF
 Aprire il file it_IT.xml, tradurlo interamente, salvarlo con la sigla del linguaggio che si è utilizzato, e poi modificare opportunamente il file app.xaml
 
 # Librerie
-Per funzionare ha bisogno del .net ramework 7.0
+Per funzionare ha bisogno del .net framework 7.0
 
 # Bibliografia
 https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
