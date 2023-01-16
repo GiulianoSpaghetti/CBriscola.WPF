@@ -7,3 +7,5 @@ https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-websi
 https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.enumeratedirectories?view=net-7.0#system-io-directory-enumeratedirectories(system-string)
 
 https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-7.0
+
+https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/send-local-toast?tabs=uwp
