@@ -7,6 +7,18 @@ Aprire il file it_IT.xml, tradurlo interamente, salvarlo con la sigla del lingua
 # Librerie
 Per funzionare ha bisogno del .net framework 7.0
 
+# Interazione con la wBriscola
+Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi della wxBriscola, basta che siano installati in c:\Program Files (x64)\wxBriscola e compariranno per essere selezionati e salvati.
+
+# Screenshots
+<img width="759" alt="2023-01-15 (1)" src="https://user-images.githubusercontent.com/49764967/212604541-ee87bc9c-1809-40d2-8489-740e3f147b3c.png">
+<img width="759" alt="2023-01-15 (2)" src="https://user-images.githubusercontent.com/49764967/212604550-cff500bf-0276-47c4-a679-cb4d9884b317.png">
+<img width="759" alt="2023-01-15" src="https://user-images.githubusercontent.com/49764967/212604554-e22349b5-4fe4-4911-adc8-fa11befccacf.png">
+![2023-01-16 (1)](https://user-images.githubusercontent.com/49764967/212604555-f85c3f68-a0ed-4d62-9773-d27be3fcdf4f.png)
+![2023-01-16 (2)](https://user-images.githubusercontent.com/49764967/212604556-f4997668-b571-468b-96fd-55cc6fbe36dc.png)
+![2023-01-16](https://user-images.githubusercontent.com/49764967/212604557-f41401ea-ab81-44f5-a2b7-d607858ac7e7.png)
+
+
 # Bibliografia
 https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
 
