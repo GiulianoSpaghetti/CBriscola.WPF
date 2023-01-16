@@ -24,7 +24,6 @@ namespace CBriscola.WPF
         private static UInt16 secondi = 5;
         private static bool avvisaTalloneFinito = true, briscolaDaPunti = false;
         private static DispatcherTimer t;
-        private string s;
         RegistryKey k1;
         elaboratoreCarteBriscola e;
         public MainWindow()
@@ -39,7 +38,14 @@ namespace CBriscola.WPF
             {
                 nomeUtente=(String)k1.GetValue("NomeUtente", "");
                 nomeCpu=(String) k1.GetValue("NomeCpu", "");
-                secondi = UInt16.Parse((String)k1.GetValue("Secondi", "0"));
+                try
+                {
+
+                    secondi = UInt16.Parse((String)k1.GetValue("Secondi", "0"));
+                } catch (System.InvalidCastException ex)
+                {
+                    secondi = 0;
+                }
                 briscolaDaPunti = bool.Parse((String)k1.GetValue("BriscolaDaPunti", "False"));
                 avvisaTalloneFinito = bool.Parse((String)k1.GetValue("AvvisaTalloneFinito", "True"));
                 nomeMazzo=(string)k1.GetValue("Mazzo", "Napoletano");
@@ -121,6 +127,9 @@ namespace CBriscola.WPF
             OpzioniInformazioni.Content = $"{this.FindResource("Informazioni")}";
             AppInformazioni.Content = $"{this.FindResource("Informazioni")}";
             AppOpzioni.Content = $"{this.FindResource("Opzioni")}";
+            fpOk.Content = $"{this.FindResource("Ok")}";
+            fpCancel.Content = $"{this.FindResource("Annulla")}";
+            fpShare.Content = $"{this.FindResource("Condividi")}";
             Briscola.Source = briscola.getImmagine();
             t = new DispatcherTimer();
             t.Interval = TimeSpan.FromSeconds(secondi);
