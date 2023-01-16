@@ -42,5 +42,6 @@
     <system:String x:Key="LaCpuHaGiocatoIl">La CPU ha giocato il</system:String>
     <system:String x:Key="DiBriscola">di Briscola</system:String>
     <system:String x:Key="GiocataCartaDiValore">Giocata carta di valore</system:String>
-    <system:String x:Key="di">di</system:String>
+    <system:String x:Key="Errore">Errore</system:String>
+    <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Impossibile creare la chiave di registro. Il dato non verrà salvato.</system:String>
 </ResourceDictionary>

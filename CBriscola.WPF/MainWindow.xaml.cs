@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,16 +25,70 @@ namespace CBriscola.WPF
         private static bool avvisaTalloneFinito = true, briscolaDaPunti = false;
         private static DispatcherTimer t;
         private string s;
+        RegistryKey k1;
         elaboratoreCarteBriscola e;
         public MainWindow()
         {
+            String nomeUtente="", nomeCpu="", nomeMazzo = "Napoletano";
             this.InitializeComponent();
+
+
+            RegistryKey k = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+            k1 = k.OpenSubKey("CBriscola", true);
+            if (k1 != null)
+            {
+                nomeUtente=(String)k1.GetValue("NomeUtente", "");
+                nomeCpu=(String) k1.GetValue("NomeCpu", "");
+                secondi = UInt16.Parse((String)k1.GetValue("Secondi", "-1"));
+                briscolaDaPunti = bool.Parse((String)k1.GetValue("BriscolaDaPunti", "False"));
+                avvisaTalloneFinito = bool.Parse((String)k1.GetValue("AvvisaTalloneFinito", "True"));
+                nomeMazzo=(string)k1.GetValue("Mazzo", "Napoletano");
+            }
+            else
+                k1 = k.CreateSubKey("CBriscola");
+
+            if (nomeUtente=="")
+            {
+                if (k1 == null)
+                {
+                    new ToastContentBuilder().AddArgument((string)this.FindResource("Errore") as string).AddText((string)this.FindResource("ImpossibileCreareChiaveDiRegistro") as String).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                    return;
+                }
+                k1.SetValue("NomeUtente", "Utente");
+                nomeUtente = "Utente";
+            }
+            if (nomeCpu == "")
+            {
+                if (k1 == null)
+                {
+                    new ToastContentBuilder().AddArgument((string)this.FindResource("Errore") as string).AddText((string)this.FindResource("ImpossibileCreareChiaveDiRegistro") as String).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                    return;
+                }
+                k1.SetValue("NomeCpu", "Cpu");
+                nomeCpu = "Cpu";
+            }
+            if (secondi==-1)
+            {
+                if (k1 == null)
+                {
+                    new ToastContentBuilder().AddArgument((string)this.FindResource("Errore") as string).AddText((string)this.FindResource("ImpossibileCreareChiaveDiRegistro") as String).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                    return;
+                }
+                k1.SetValue("Secondi", 5);
+                secondi = 5;
+            }
+            if (nomeMazzo=="Napoletano")
+                cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
+            else
+                cartaCpu.Source = new BitmapImage(new Uri("C:\\Program Files\\wxBriscola\\Mazzi\\" + nomeMazzo + "\\retro carte pc.png"));
             e = new elaboratoreCarteBriscola(briscolaDaPunti);
             m = new mazzo(e);
-            cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
+            m.setNome(nomeMazzo);
             carta.inizializza(40, cartaHelperBriscola.getIstanza(e), m, this);
-            g = new giocatore(new giocatoreHelperUtente(), "Giulio", 3);
-            cpu = new giocatore(new giocatoreHelperCpu(elaboratoreCarteBriscola.getCartaBriscola()), "Cpu", 3);
+
+            g = new giocatore(new giocatoreHelperUtente(), nomeUtente, 3);
+            cpu = new giocatore(new giocatoreHelperCpu(elaboratoreCarteBriscola.getCartaBriscola()), nomeCpu, 3);
+
             primo = g;
             secondo = cpu;
             briscola = carta.getCarta(elaboratoreCarteBriscola.getCartaBriscola());
@@ -334,6 +389,13 @@ namespace CBriscola.WPF
                 Cpu2.Source = cartaCpu.Source;
                 CartaBriscola.Content = $"{this.FindResource("IlSemeDiBriscolaE")}: {briscola.getSemeStr()}";
             }
+            k1.SetValue("NomeUtente", g.getNome());
+            k1.SetValue("NomeCpu", cpu.getNome());
+            k1.SetValue("Secondi", secondi);
+            k1.SetValue("BriscolaDaPunti", briscolaDaPunti);
+            k1.SetValue("AvvisaTalloneFinito", avvisaTalloneFinito);
+            k1.SetValue("Mazzo", m.getNome());
+
 
             GOpzioni.Visibility = Visibility.Collapsed;
             Applicazione.Visibility = Visibility.Visible;
