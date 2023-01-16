@@ -7,7 +7,7 @@ Aprire il file it_IT.xml, tradurlo interamente, salvarlo con la sigla del lingua
 # Librerie
 Per funzionare ha bisogno del .net framework 7.0
 
-# Interazione con la wBriscola
+# Interazione con la wxBriscola
 Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi della wxBriscola, basta che siano installati in c:\Program Files (x64)\wxBriscola e compariranno per essere selezionati e salvati.
 Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e comunque pienamente raggiungibile.
 
