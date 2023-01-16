@@ -39,7 +39,7 @@ namespace CBriscola.WPF
             {
                 nomeUtente=(String)k1.GetValue("NomeUtente", "");
                 nomeCpu=(String) k1.GetValue("NomeCpu", "");
-                secondi = UInt16.Parse((String)k1.GetValue("Secondi", "-1"));
+                secondi = UInt16.Parse((String)k1.GetValue("Secondi", "0"));
                 briscolaDaPunti = bool.Parse((String)k1.GetValue("BriscolaDaPunti", "False"));
                 avvisaTalloneFinito = bool.Parse((String)k1.GetValue("AvvisaTalloneFinito", "True"));
                 nomeMazzo=(string)k1.GetValue("Mazzo", "Napoletano");
@@ -240,6 +240,8 @@ namespace CBriscola.WPF
             } catch (System.IO.DirectoryNotFoundException ex)
             {
                 mazzi = new List<string>();
+                new ToastContentBuilder().AddArgument((string)this.FindResource("Attenzione") as string).AddText((string)this.FindResource("CercaNuoviMazzi") as String).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+
             }
             if (!mazzi.Contains("Napoletano"))
                 mazzi.Add("\\Napoletano");
