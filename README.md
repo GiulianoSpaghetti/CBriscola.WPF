@@ -19,6 +19,13 @@ Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e co
 <img width="759" alt="2023-01-15 (2)" src="https://user-images.githubusercontent.com/49764967/212604550-cff500bf-0276-47c4-a679-cb4d9884b317.png">
 <img width="759" alt="2023-01-15" src="https://user-images.githubusercontent.com/49764967/212604554-e22349b5-4fe4-4911-adc8-fa11befccacf.png">
 
+# Donazioni
+
+[![paypal](https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H4ZHTFRCETWXG)
+
+Puoi donare anche tramite carta Hype a patto di avere il mio numero di cellulare nella rubrica. Sai dove lo puoi trovare? Sul mio curriculum.
+Apri l'app Hype, fai il login, seleziona PAGAMENTI, INVIA DENARO, seleziona il mio numero nella rubrica, imposta l'importo, INSERISCI LA CAUSALE e segui le istruzioni a video.
+
 # Dedica
 Voglio dedicare l'intero progetto non a Francesca la barista, ma a quella gentil donzella che resterà un mistero che mi ha aiutato a rivisondoli.
 
