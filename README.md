@@ -9,6 +9,7 @@ Per funzionare ha bisogno del .net framework 7.0
 
 # Interazione con la wBriscola
 Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi della wxBriscola, basta che siano installati in c:\Program Files (x64)\wxBriscola e compariranno per essere selezionati e salvati.
+Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e comunque pienamente raggiungibile.
 
 # Screenshots
 <img width="759" alt="2023-01-15 (1)" src="https://user-images.githubusercontent.com/49764967/212604541-ee87bc9c-1809-40d2-8489-740e3f147b3c.png">
