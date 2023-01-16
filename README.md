@@ -26,3 +26,5 @@ https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?vie
 
 https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/send-local-toast?tabs=uwp
 
+https://stackoverflow.com/questions/53141969/registry-currentuser-createsubkey-not-creating-any-sub-key
+
