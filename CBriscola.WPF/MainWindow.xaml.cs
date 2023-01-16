@@ -67,7 +67,7 @@ namespace CBriscola.WPF
                 k1.SetValue("NomeCpu", "Cpu");
                 nomeCpu = "Cpu";
             }
-            if (secondi==-1)
+            if (secondi==0)
             {
                 if (k1 == null)
                 {
@@ -232,8 +232,15 @@ namespace CBriscola.WPF
         }
         private void OnOpzioni_Click(object sender, EventArgs e)
         {
+            List<String> mazzi;
             String dirs = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)+"\\wxBriscola\\Mazzi";
-            List<String> mazzi=new List<String>(Directory.EnumerateDirectories(dirs));
+            try
+            {
+                mazzi = new List<String>(Directory.EnumerateDirectories(dirs));
+            } catch (System.IO.DirectoryNotFoundException ex)
+            {
+                mazzi = new List<string>();
+            }
             if (!mazzi.Contains("Napoletano"))
                 mazzi.Add("\\Napoletano");
             mazzi.Sort();
