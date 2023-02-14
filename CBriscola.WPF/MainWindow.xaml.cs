@@ -122,8 +122,8 @@ namespace CBriscola.WPF
             Cpu0.Source = cartaCpu.Source;
             Cpu1.Source = cartaCpu.Source;
             Cpu2.Source = cartaCpu.Source;
-            PuntiCpu.Content = $"{d["PuntiDi"]} {cpu.GetNome()}: {cpu.GetPunteggio()}";
-            PuntiUtente.Content = $"{d["PuntiDi"]} {g.GetNome()}: {g.GetPunteggio()}";
+            PuntiCpu.Content = $"{d["PuntiDiPrefisso"]}{cpu.GetNome()}{d["PuntiDiSuffisso"]}: {cpu.GetPunteggio()}";
+            PuntiUtente.Content = $"{d["PuntiDiPrefisso"]}{g.GetNome()}{d["PuntiDiSuffisso"]}: {g.GetPunteggio()}";
             NelMazzoRimangono.Content = $"{d["NelMazzoRimangono"]} {m.GetNumeroCarte()} {d["carte"]}";
             CartaBriscola.Content = $"{d["IlSemeDiBriscolaE"]}: {briscola.GetSemeStr()}";
             lbCartaBriscola.Content = $"{d["BriscolaDaPunti"]}";
@@ -154,8 +154,8 @@ namespace CBriscola.WPF
                 }
 
                 primo.AggiornaPunteggio(secondo);
-                PuntiCpu.Content = $"{d["PuntiDi"]} {cpu.GetNome()}: {cpu.GetPunteggio()}";
-                PuntiUtente.Content = $"{d["PuntiDi"]} {g.GetNome()}: {g.GetPunteggio()}";
+                PuntiCpu.Content = $"{d["PuntiDiPrefisso"]}{cpu.GetNome()}{d["PuntiDiSuffisso"]}: {cpu.GetPunteggio()}";
+                PuntiUtente.Content = $"{d["PuntiDiPrefisso"]}{g.GetNome()}{d["PuntiDiSuffisso"]}: {g.GetPunteggio()}";
                 if (AggiungiCarte())
                 {
                     NelMazzoRimangono.Content = $"{d["NelMazzoRimangono"]} {m.GetNumeroCarte()} {d["carte"]}";
@@ -309,8 +309,8 @@ namespace CBriscola.WPF
             Cpu2.Visibility = Visibility.Visible;
             Giocata0.Visibility = Visibility.Collapsed;
             Giocata1.Visibility = Visibility.Collapsed;
-            PuntiUtente.Content = $"Punti di {g.GetNome()}: {g.GetPunteggio()}";
-            PuntiCpu.Content = $"{d["PuntiDi"]} {cpu.GetNome()}: {cpu.GetPunteggio()}";
+            PuntiCpu.Content = $"{d["PuntiDiPrefisso"]}{cpu.GetNome()}{d["PuntiDiSuffisso"]}: {cpu.GetPunteggio()}";
+            PuntiUtente.Content = $"{d["PuntiDiPrefisso"]}{g.GetNome()}{d["PuntiDiSuffisso"]}: {g.GetPunteggio()}";
             PuntiUtente.Content = $"{d["PuntiDi"]} {g.GetNome()}: {g.GetPunteggio()}";
             NelMazzoRimangono.Content = $"{d["NelMazzoRimangono"]} {m.GetNumeroCarte()} {d["carte"]}";
             NelMazzoRimangono.Visibility = Visibility.Visible;
