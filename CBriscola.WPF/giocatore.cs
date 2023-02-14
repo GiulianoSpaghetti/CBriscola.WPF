@@ -1,57 +1,56 @@
 /*
- *  This code is distribuited under GPL 3.0 or, at your opinion, any later version
- *  CBriscola 0.1
+  *  This code is distribuited under GPL 3.0 or, at your opinion, any later version
+ *  CBriscola 1.1.3
  *
- *  Created by numerunix on 22/05/22.
- *  Copyright 2022 Some rights reserved.
+ *  Created by Giulio Sorrentino (numerone) on 29/01/23.
+ *  Copyright 2023 Some rights reserved.
  *
  */
 
 using System;
 using System.Windows.Media.Imaging;
 
-namespace CBriscola {
-	class giocatore
+namespace org.altervista.numerone.framework
+{
+  public  class Giocatore
 	{
 		private string nome;
-		private carta[] mano;
+		private Carta[] mano;
 		private bool ordinaMano;
 		private UInt16 numeroCarte;
 		private UInt16 iCarta;
 		private UInt16 iCartaGiocata;
 		private UInt16 punteggio;
-		private giocatoreHelper helper;
-		public enum CARTA_GIOCATA { NESSUNA_CARTA_GIOCATA = UInt16.MaxValue };
-		public giocatore(giocatoreHelper h, string n, UInt16 carte, bool ordina = true)
+		private readonly GiocatoreHelper helper;
+		public enum Carta_GIOCATA { NESSUNA_Carta_GIOCATA = UInt16.MaxValue };
+		public Giocatore(GiocatoreHelper h, string n, UInt16 carte, bool ordina = true)
 		{
 			ordinaMano = ordina;
 			numeroCarte = carte;
-			iCartaGiocata = (UInt16)(CARTA_GIOCATA.NESSUNA_CARTA_GIOCATA);
+			iCartaGiocata = (UInt16)(Carta_GIOCATA.NESSUNA_Carta_GIOCATA);
 			punteggio = 0;
 			helper = h;
 			nome = n;
-			mano = new carta[3];
+			mano = new Carta[3];
 			iCarta = 0;
 		}
-		public string getNome() { return nome; }
-		public void setNome(string n) { nome = n; }
-		public bool getFlagOrdina() { return ordinaMano; }
-		public void setFlagOrdina(bool ordina) { ordinaMano = ordina; }
-		public void addCarta(mazzo m)
+		public string GetNome() { return nome; }
+		public void SetNome(string n) { nome = n; }
+		public bool GetFlagOrdina() { return ordinaMano; }
+		public void SetFlagOrdina(bool ordina) { ordinaMano = ordina; }
+		public void AddCarta(Mazzo m)
 		{
 			UInt16 i = 0;
-			UInt16 j = 0;
-			carta c;
-			carta temp;
-			if (iCarta == numeroCarte && iCartaGiocata == (UInt16)CARTA_GIOCATA.NESSUNA_CARTA_GIOCATA)
-				throw new ArgumentException($"Chiamato giocatore::setCarta con mano.size()==numeroCarte=={numeroCarte}");
-			if (iCartaGiocata != (UInt16)CARTA_GIOCATA.NESSUNA_CARTA_GIOCATA)
+			Carta temp;
+			if (iCarta == numeroCarte && iCartaGiocata == (UInt16)Carta_GIOCATA.NESSUNA_Carta_GIOCATA)
+				throw new ArgumentException($"Chiamato Giocatore::setCarta con mano.size()==numeroCarte=={numeroCarte}");
+			if (iCartaGiocata != (UInt16)Carta_GIOCATA.NESSUNA_Carta_GIOCATA)
 			{
 				for (i = iCartaGiocata; i < numeroCarte - 1; i++)
 					mano[i] = mano[i + 1];
 				mano[i] = null;
-				iCartaGiocata = (UInt16)CARTA_GIOCATA.NESSUNA_CARTA_GIOCATA;
-				mano[iCarta - 1] = sostituisciCartaGiocata(m);
+				iCartaGiocata = (UInt16)Carta_GIOCATA.NESSUNA_Carta_GIOCATA;
+				mano[iCarta - 1] = SostituisciCartaGiocata(m);
 				for (i = (UInt16)(iCarta - 2); i < UInt16.MaxValue && iCarta > 1 && mano[i].CompareTo(mano[i + 1]) < 0; i--)
 				{
 					temp = mano[i];
@@ -60,28 +59,28 @@ namespace CBriscola {
 				}
 				return;
 			}
-			ordina(m);
+			Ordina(m);
 
 
 		}
 
-		private void ordina(mazzo m)
+		private void Ordina(Mazzo m)
 		{
 			UInt16 i = 0;
 			UInt16 j = 0;
-			carta c = sostituisciCartaGiocata(m);
+			Carta c = SostituisciCartaGiocata(m);
 			for (i = 0; i < iCarta && mano[i] != null && c.CompareTo(mano[i]) < 0; i++) ;
 			for (j = (UInt16)(numeroCarte - 1); j > i; j--)
 				mano[j] = mano[j - 1];
 			mano[i] = c;
 			iCarta++;
 		}
-		private carta sostituisciCartaGiocata(mazzo m)
+		private Carta SostituisciCartaGiocata(Mazzo m)
 		{
-			carta c;
+			Carta c;
 			try
 			{
-				c = carta.getCarta(m.getCarta());
+				c = Carta.GetCarta(m.GetCarta());
 			}
 			catch (IndexOutOfRangeException e)
 			{
@@ -93,35 +92,36 @@ namespace CBriscola {
 			}
 			return c;
 		}
-		public carta getCartaGiocata()
+		public Carta GetCartaGiocata()
 		{
 			return mano[iCartaGiocata];
 		}
-		public UInt16 getPunteggio() { return punteggio; }
-		public void gioca(UInt16 i)
+		public UInt16 GetPunteggio() { return punteggio; }
+		public void Gioca(UInt16 i)
 		{
-			iCartaGiocata = helper.gioca(i, mano, numeroCarte);
+			iCartaGiocata = helper.Gioca(i, mano, numeroCarte);
 		}
-		public void gioca(UInt16 i, giocatore g1)
+		public void Gioca(UInt16 i, Giocatore g1)
 		{
-			iCartaGiocata = helper.gioca(i, mano, numeroCarte, g1.getCartaGiocata());
+			iCartaGiocata = helper.Gioca(i, mano, numeroCarte, g1.GetCartaGiocata());
 		}
-		public void aggiornaPunteggio(giocatore g)
+		public void AggiornaPunteggio(Giocatore g)
 		{
-			helper.aggiornaPunteggio(ref punteggio, getCartaGiocata(), g.getCartaGiocata());
-		}
-
-		public BitmapImage getImmagine(UInt16 quale)
-		{
-			return mano[quale].getImmagine();
+			helper.AggiornaPunteggio(ref punteggio, GetCartaGiocata(), g.GetCartaGiocata());
 		}
 
-		public UInt16 getICartaGiocata()
+        public BitmapImage GetImmagine(UInt16 quale)
+        {
+            return mano[quale].GetImmagine();
+        }
+
+
+        public UInt16 GetICartaGiocata()
 		{
 			return iCartaGiocata;
 		}
 
-		public UInt16 getNumeroCarte()
+		public UInt16 GetNumeroCarte()
 		{
 			return numeroCarte;
 		}

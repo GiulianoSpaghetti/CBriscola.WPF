@@ -1,36 +1,37 @@
 /*
   *  This code is distribuited under GPL 3.0 or, at your opinion, any later version
- *  CBriscola 0.1
+ *  CBriscola 1.1.3
  *
- *  Created by numerunix on 22/05/22.
- *  Copyright 2022 Some rights reserved.
+ *  Created by Giulio Sorrentino (numerone) on 29/01/23.
+ *  Copyright 2023 Some rights reserved.
  *
  */
 
 using System;
 
-namespace CBriscola
+namespace org.altervista.numerone.framework
+
 {
-	class giocatoreHelperUtente : giocatoreHelper
+    public class GiocatoreHelperUtente : GiocatoreHelper
 	{
-		public giocatoreHelperUtente()
+		public GiocatoreHelperUtente()
 		{
 			;
 		}
-		public UInt16 gioca(UInt16 i, carta[] v, UInt16 numeroCarte)
+		public UInt16 Gioca(UInt16 i, Carta[] v, UInt16 numeroCarte)
 		{
 			if (i < numeroCarte)
 				return i;
 			else
 				throw new ArgumentException("");
 		}
-		public UInt16 gioca(UInt16 i, carta[] v, UInt16 numeroCarte, carta c)
+		public UInt16 Gioca(UInt16 i, Carta[] v, UInt16 numeroCarte, Carta c)
 		{
-			return gioca(i, v, numeroCarte);
+			return Gioca(i, v, numeroCarte);
 		}
-		public void aggiornaPunteggio(ref UInt16 punteggioAttuale, carta c, carta c1)
+		public void AggiornaPunteggio(ref UInt16 punteggioAttuale, Carta c, Carta c1)
 		{
-			punteggioAttuale = (UInt16)(punteggioAttuale + c.getPunteggio() + c1.getPunteggio());
+			punteggioAttuale = (UInt16)(punteggioAttuale + c.GetPunteggio() + c1.GetPunteggio());
 		}
 
     };

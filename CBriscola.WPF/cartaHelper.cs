@@ -1,22 +1,23 @@
 /*
- *  This code is distribuited under GPL 3.0 or, at your opinion, any later version
- *  CBriscola 0.1
+  *  This code is distribuited under GPL 3.0 or, at your opinion, any later version
+ *  CBriscola 1.1.3
  *
- *  Created by numerunix on 22/05/22.
- *  Copyright 2022 Some rights reserved.
+ *  Created by Giulio Sorrentino (numerone) on 29/01/23.
+ *  Copyright 2023 Some rights reserved.
  *
  */
 
-using CBriscola.WPF;
 using System;
-namespace CBriscola
+using System.Windows;
+
+namespace org.altervista.numerone.framework
 {
-	interface cartaHelper
+	public interface CartaHelper
 	{
-		UInt16 getSeme(UInt16 carta);
-		UInt16 getValore(UInt16 carta);
-		UInt16 getPunteggio(UInt16 carta);
-		string getSemeStr(UInt16 carta, String mazzo, MainWindow mw);
-		UInt16 getNumero(UInt16 seme, UInt16 valore);
+		UInt16 GetSeme(UInt16 Carta);
+		UInt16 GetValore(UInt16 Carta);
+		UInt16 GetPunteggio(UInt16 Carta);
+		string GetSemeStr(UInt16 carta, String mazzo, ResourceDictionary d);
+		UInt16 GetNumero(UInt16 seme, UInt16 valore);
 	};
 }
