@@ -34,7 +34,7 @@ namespace CBriscola.WPF
             this.InitializeComponent();
             try
             {
-                d = this.FindResource(CultureInfo.InstalledUICulture.TwoLetterISOLanguageName) as ResourceDictionary;
+                d = this.FindResource(CultureInfo.CurrentCulture.TwoLetterISOLanguageName) as ResourceDictionary;
             }
             catch (ResourceReferenceKeyNotFoundException ex)
             { d = this.FindResource("en") as ResourceDictionary; }
@@ -99,7 +99,7 @@ namespace CBriscola.WPF
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
             Carta.Inizializza(40, CartaHelperBriscola.GetIstanza(e));
-            Carta.CaricaImmagini(m,40, CartaHelperBriscola.GetIstanza(e), d);
+            Carta.CaricaImmagini(m, 40, CartaHelperBriscola.GetIstanza(e), d);
 
             g = new Giocatore(new GiocatoreHelperUtente(), nomeUtente, 3);
             cpu = new Giocatore(new GiocatoreHelperCpu(ElaboratoreCarteBriscola.GetCartaBriscola()), nomeCpu, 3);
