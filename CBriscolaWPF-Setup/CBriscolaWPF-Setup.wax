@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <DeployedProjects />
-  <DirectoryMappings />
+  <DeployedProjects>
+    <string>CBriscola.WPF\CBriscola.WPF.csproj</string>
+  </DeployedProjects>
+  <DirectoryMappings>
+    <Item Key="" Value="ProgramFiles64Folder" />
+  </DirectoryMappings>
   <FileMappings />
   <DeploySymbols>false</DeploySymbols>
   <DeployLocalizations>true</DeployLocalizations>

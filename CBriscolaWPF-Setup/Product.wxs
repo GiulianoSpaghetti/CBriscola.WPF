@@ -23,7 +23,6 @@
 								</File>
 								<RemoveFolder Id="DeleteCBriscolaShortcut" Directory="CBriscolaFolder" On="uninstall" />
 								<File Id="CBriscola.WPF.dll" Name="CBriscola.WPF.dll" Source="$(var.CBriscola.WPF.TargetDir)CBriscola.WPF.dll" />
-								<File Id="CBriscola.WPF.pdb" Name="CBriscola.WPF.pdb" Source="$(var.CBriscola.WPF.TargetDir)CBriscola.WPF.pdb" />
 								<File Id="CBriscola.WPF.runtimeconfig.json" Name="CBriscola.WPF.runtimeconfig.json" Source="$(var.CBriscola.WPF.TargetDir)CBriscola.WPF.runtimeconfig.json" />
 								<File Id="Microsoft.Toolkit.Uwp.Notifications.dll" Name="Microsoft.Toolkit.Uwp.Notifications.dll" Source="$(var.CBriscola.WPF.TargetDir)Microsoft.Toolkit.Uwp.Notifications.dll" />
 								<File Id="Microsoft.Windows.SDK.NET.dll" Name="Microsoft.Windows.SDK.NET.dll" Source="$(var.CBriscola.WPF.TargetDir)Microsoft.Windows.SDK.NET.dll" />

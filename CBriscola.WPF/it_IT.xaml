@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <system:String x:Key="PuntiDiPrefisso">Punti di </system:String>
+    <system:String x:Key="PuntiDiPrefisso">Punti di&#160;</system:String>
     <system:String x:Key="PuntiDiSuffisso">&#160;</system:String>
     <system:String x:Key="NelMazzoRimangono">Nel mazzo rimangono</system:String>
     <system:String x:Key="carte">carte</system:String>
@@ -48,4 +48,7 @@
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Impossibile creare la chiave di registro. Il dato non verrà salvato</system:String>
     <system:String x:Key="Attenzione">Attenzione</system:String>
     <system:String x:Key="CercaNuoviMazzi">Puoi usare i mazzi della wxBriscola per aumentare il livello del diverimento</system:String>
+    <system:String x:Key="Esci">Esci</system:String>
+    <system:String x:Key="File">Archivio</system:String>
+    <system:String x:Key="Info">?</system:String>
 </ResourceDictionary>
