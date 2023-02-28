@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="CBriscola" Language="1033" Version="0.5" Manufacturer="numeronesoft" UpgradeCode="98EE143B-50C7-4F12-9D74-2729423E8494">
+	<Product Id="*" Name="CBriscola" Language="1033" Version="0.5.1" Manufacturer="numeronesoft" UpgradeCode="98EE143B-50C7-4F12-9D74-2729423E8494">
 		<Package Platform="x64" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />

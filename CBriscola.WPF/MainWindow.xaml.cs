@@ -10,6 +10,7 @@ using System.Windows.Threading;
 using Image = System.Windows.Controls.Image;
 using org.altervista.numerone.framework;
 using System.Globalization;
+using Windows.Security.ExchangeActiveSyncProvisioning;
 
 namespace CBriscola.WPF
 {
@@ -26,12 +27,17 @@ namespace CBriscola.WPF
         private static UInt16 secondi = 5;
         private static bool avvisaTalloneFinito = true, briscolaDaPunti = false;
         private static DispatcherTimer t;
+        public static string piattaforma;
         RegistryKey k1;
         ResourceDictionary d;
         ElaboratoreCarteBriscola e;
         public MainWindow()
         {
             this.InitializeComponent();
+            EasClientDeviceInformation eas = new EasClientDeviceInformation();
+            piattaforma = eas.SystemProductName;
+            if (piattaforma == "System Product Name")
+                piattaforma = "PC";
             try
             {
                 d = this.FindResource(CultureInfo.CurrentCulture.TwoLetterISOLanguageName) as ResourceDictionary;
@@ -432,7 +438,7 @@ namespace CBriscola.WPF
         {
             var psi = new ProcessStartInfo
             {
-                FileName = $"https://twitter.com/intent/tweet?text=Con%20la%20CBriscola%20la%20partita%20{g.GetNome()}%20contro%20{cpu.GetNome()}%20%C3%A8%20finita%20{g.GetPunteggio()}%20a%20{cpu.GetPunteggio()}&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fcbriscola.wpf",
+                FileName = $"https://twitter.com/intent/tweet?text=With%20the%20CBriscola%20in%20WPF%20the%20match%20{g.GetNome()}%20versus%20{cpu.GetNome()}%20is%20finished%20{g.GetPunteggio()}%20at%20{cpu.GetPunteggio()}%20with%20deck%20{m.GetNome()}%20on%20platform%20{piattaforma}&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fcbriscola.wpf",
                 UseShellExecute = true
             };
             Process.Start(psi);

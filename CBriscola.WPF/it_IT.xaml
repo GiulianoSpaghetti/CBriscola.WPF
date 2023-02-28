@@ -24,8 +24,8 @@
     <system:String x:Key="NuovaPartita">Vuoi effettuare una nuova partita</system:String>
     <system:String x:Key="ValoreNonValido">Valore non valido</system:String>
     <system:String x:Key="Mazzo">Mazzo</system:String>
-    <system:String x:Key="Ok">Ok</system:String>
-    <system:String x:Key="Annulla">Annulla</system:String>
+    <system:String x:Key="Ok">Si</system:String>
+    <system:String x:Key="Annulla">No</system:String>
     <system:String x:Key="Condividi">Condividi</system:String>
     <system:String x:Key="bastoni">Bastoni</system:String>
     <system:String x:Key="coppe">Coppe</system:String>
