@@ -26,9 +26,6 @@ Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e co
 Puoi donare anche tramite carta Hype a patto di avere il mio numero di cellulare nella rubrica. Sai dove lo puoi trovare? Sul mio curriculum.
 Apri l'app Hype, fai il login, seleziona PAGAMENTI, INVIA DENARO, seleziona il mio numero nella rubrica, imposta l'importo, INSERISCI LA CAUSALE e segui le istruzioni a video.
 
-# Dedica
-Voglio dedicare l'intero progetto non a Francesca la barista, ma a quella gentil donzella che resterà un mistero che mi ha aiutato a rivisondoli.
-
 # Bibliografia
 https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
 
