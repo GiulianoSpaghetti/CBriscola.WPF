@@ -5,7 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CBriscola.WPF"
         mc:Ignorable="d"
-        Title="Cbriscola in WPF" Height="1024" Width="1280">
+        Title="Cbriscola in WPF" Height="1024" Width="1280"
+        Background="Green">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="white" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="DarkOrange" />
+            <Setter Property="BorderThickness" Value="4" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid x:Name="Applicazione">
             <Grid.RowDefinitions>
@@ -48,7 +58,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="CBriscola versione 0.5.1" Grid.Row="0" />
+            <Label Content="CBriscola versione 0.6" Grid.Row="0" />
             <Label Content="Giulio Sorrentino ⓒ 2023" Grid.Row="1" />
             <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="2"/>
             <Button Content="https://github.com/numerunix/CBriscola.WPF" Click="OnSito_Click" Grid.Row="3" />
