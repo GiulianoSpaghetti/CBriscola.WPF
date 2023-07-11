@@ -1,5 +1,5 @@
 # CBriscola.WPF
-La CBriscola in WP
+La CBriscola in WPF
 
 # Come installare
 winget install GiulioSorrentino.CBriscola.WPF
