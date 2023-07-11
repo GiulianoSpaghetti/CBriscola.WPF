@@ -1,5 +1,8 @@
 # CBriscola.WPF
-La CBriscola in WPF
+La CBriscola in WP
+
+# Come installare
+winget install GiulioSorrentino.CBriscola.WPF
 
 # Internazionalizzazione
 Aprire il file it_IT.xml, tradurlo interamente, salvarlo con la sigla del linguaggio che si è utilizzato, e poi modificare opportunamente il file app.xaml
