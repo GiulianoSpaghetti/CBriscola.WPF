@@ -371,6 +371,8 @@ namespace CBriscola.WPF
 
         private void Image_Tapped(object Sender, EventArgs arg)
         {
+            if (t.IsEnabled)
+                return;
             Image img = (Image)Sender;
             t.Start();
             i = GiocaUtente(img);
