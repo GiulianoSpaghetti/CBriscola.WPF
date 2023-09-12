@@ -25,7 +25,7 @@ namespace CBriscola.WPF
         private static Image cartaCpu = new Image();
         private static Image i, i1;
         private static UInt16 secondi = 5;
-        private static bool avvisaTalloneFinito = true, briscolaDaPunti = false;
+        private static bool avvisaTalloneFinito = true, briscolaDaPunti = false, primaUtente=true;
         private static DispatcherTimer t;
         public static string piattaforma;
         RegistryKey k1;
@@ -328,8 +328,17 @@ namespace CBriscola.WPF
             fpShare.Content = $"{d["Condividi"]}";
             Briscola.Source = briscola.GetImmagine();
             Briscola.Visibility = Visibility.Visible;
-            primo = g;
-            secondo = cpu;
+            primaUtente = !primaUtente;
+            if (primaUtente)
+            {
+                primo = g;
+                secondo = cpu;
+            } else
+            {
+                primo = cpu;
+                secondo = g;
+                i1 = GiocaCpu();
+            }
             Applicazione.Visibility = Visibility.Visible;
         }
         private void OnCancelFp_Click(object sender, EventArgs e)
