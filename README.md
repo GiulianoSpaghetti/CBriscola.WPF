@@ -15,13 +15,7 @@ Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi del
 Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e comunque pienamente raggiungibile.
 
 # GamePlay
-[![youtube](https://i.ibb.co/R00SNR3/mq2.png)](https://youtu.be/DbWgBCG_TpM)
-
-# Screenshots
-<img width="759" alt="2023-01-15 (1)" src="https://user-images.githubusercontent.com/49764967/212604541-ee87bc9c-1809-40d2-8489-740e3f147b3c.png">
-<img width="759" alt="2023-01-15 (2)" src="https://user-images.githubusercontent.com/49764967/212604550-cff500bf-0276-47c4-a679-cb4d9884b317.png">
-<img width="759" alt="2023-01-15" src="https://user-images.githubusercontent.com/49764967/212604554-e22349b5-4fe4-4911-adc8-fa11befccacf.png">
-
+https://www.youtube.com/watch?v=_vG73sEWOjQ
 # Donazioni
 
 [![paypal](https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H4ZHTFRCETWXG)
