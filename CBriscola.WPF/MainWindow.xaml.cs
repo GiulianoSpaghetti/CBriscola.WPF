@@ -267,12 +267,12 @@ namespace CBriscola.WPF
                 new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["CercaNuoviMazzi"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
 
             }
-            if (!mazzi.Contains("Napoletano"))
-                mazzi.Add("\\Napoletano");
             mazzi.Sort();
             lsmazzi.Items.Clear();
             foreach (var s in mazzi)
-            lsmazzi.Items.Add(s.Substring(s.LastIndexOf("\\")+1));
+                lsmazzi.Items.Add(s.Substring(s.LastIndexOf("\\") + 1));
+            if (!lsmazzi.Items.Contains("Napoletano"))
+                lsmazzi.Items.Add("Napoletano");
             Info.Visibility = Visibility.Collapsed;
             Applicazione.Visibility = Visibility.Collapsed;
             GOpzioni.Visibility = Visibility.Visible;
@@ -449,7 +449,7 @@ namespace CBriscola.WPF
         {
             var psi = new ProcessStartInfo
             {
-                FileName = $"https://twitter.com/intent/tweet?text=With%20the%20CBriscola%20in%20WPF%20the%20match%20{g.GetNome()}%20versus%20{cpu.GetNome()}%20is%20finished%20{g.GetPunteggio()}%20at%20{cpu.GetPunteggio()}%20with%20deck%20{m.GetNome()}%20on%20platform%20{piattaforma}&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fcbriscola.wpf",
+                FileName = $"https://twitter.com/intent/tweet?text={d["ColGioco"]}{g.GetNome()}%20{d["contro"]}%20{cpu.GetNome()}%20{d["efinito"]}%20{g.GetPunteggio()}%20{d["a"]}%20{cpu.GetPunteggio()}%20{d["colmazzo"]}%20{m.GetNome()}%20{d["piattaforma"]}%20{piattaforma}&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fcbriscola.wpf",
                 UseShellExecute = true
             };
             Process.Start(psi);

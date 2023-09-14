@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-
     <system:String x:Key="PuntiDiPrefisso">Punti di&#160;</system:String>
     <system:String x:Key="PuntiDiSuffisso">&#160;</system:String>
     <system:String x:Key="NelMazzoRimangono">Nel mazzo rimangono</system:String>
@@ -51,4 +50,10 @@
     <system:String x:Key="Esci">Esci</system:String>
     <system:String x:Key="File">Archivio</system:String>
     <system:String x:Key="Info">?</system:String>
+    <system:String x:Key="ColGioco">Con%20la%20CBriscolaWPF%20la%20partita</system:String>
+    <system:String x:Key="contro">contro</system:String>
+    <system:String x:Key="efinito">è%20finito</system:String>
+    <system:String x:Key="colmazzo">col%20mazzo</system:String>
+    <system:String x:Key="a">a</system:String>
+    <system:String x:Key="piattaforma">su%20piattaforma</system:String>
 </ResourceDictionary>
