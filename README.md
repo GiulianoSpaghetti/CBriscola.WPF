@@ -34,3 +34,4 @@ https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notificati
 
 https://stackoverflow.com/questions/53141969/registry-currentuser-createsubkey-not-creating-any-sub-key
 
+https://stackoverflow.com/questions/1410092/identify-the-operating-system-details-in-c-sharp
