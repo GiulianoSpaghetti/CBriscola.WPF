@@ -5,7 +5,7 @@
     <system:String x:Key="PuntiDiSuffisso">&#160;</system:String>
     <system:String x:Key="NelMazzoRimangono">Quedan&#160;</system:String>
     <system:String x:Key="carte">&#160;cartas en la baraja</system:String>
-    <system:String x:Key="IlSemeDiBriscolaE">>El palo de triunfo es</system:String>
+    <system:String x:Key="IlSemeDiBriscolaE">El palo de triunfo es</system:String>
     <system:String x:Key="BriscolaDaPunti">La carta que designa el palo de triunfo puede sumar puntos</system:String>
     <system:String x:Key="AvvisaTallone">Alertas cuando termina el mazo</system:String>
     <system:String x:Key="NomeUtente">Nombre de usuario</system:String>
@@ -50,7 +50,7 @@
     <system:String x:Key="Esci">Salir</system:String>
     <system:String x:Key="File">Archivo</system:String>
     <system:String x:Key="Info">?</system:String>
-    <system:String x:Key="ColGioco">>Con%20el%20juego%20CBriscolaWPF%20el%20juego%20</system:String>
+    <system:String x:Key="ColGioco">Con%20el%20juego%20CBriscolaWPF%20el%20juego%20</system:String>
     <system:String x:Key="contro">versus</system:String>
     <system:String x:Key="efinito">està%20terminado</system:String>
     <system:String x:Key="a">a</system:String>

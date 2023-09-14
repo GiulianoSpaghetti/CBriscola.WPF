@@ -37,7 +37,7 @@ namespace CBriscola.WPF
             EasClientDeviceInformation eas = new EasClientDeviceInformation();
             piattaforma = eas.SystemProductName;
             if (piattaforma == "System Product Name")
-                piattaforma = "PC";
+                piattaforma = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             try
             {
                 d = this.FindResource(CultureInfo.CurrentCulture.TwoLetterISOLanguageName) as ResourceDictionary;
@@ -213,7 +213,7 @@ namespace CBriscola.WPF
                             s = $"{d["HaiPerso"]}";
                         s = $"{s} {d["per"]} {Math.Abs(g.GetPunteggio() - cpu.GetPunteggio())} {d["punti"]}";
                     }
-                    fpRisultrato.Content = $"{d["PartitaFinita"]}. {s} {d["NuovaPartita"]}?";
+                    fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}?";
                     Applicazione.Visibility = Visibility.Collapsed;
                     FinePartita.Visibility = Visibility.Visible;
                 }
@@ -453,6 +453,7 @@ namespace CBriscola.WPF
                 UseShellExecute = true
             };
             Process.Start(psi);
+            fpShare.IsEnabled = false;
         }
 
 
