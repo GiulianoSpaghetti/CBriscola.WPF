@@ -145,6 +145,7 @@ namespace CBriscola.WPF
             fpOk.Content = $"{d["Ok"]}";
             fpCancel.Content = $"{d["Annulla"]}";
             fpShare.Content = $"{d["Condividi"]}";
+            lblinfo.Content = $"{d["info"]}";
             Briscola.Source = briscola.GetImmagine();
             t = new DispatcherTimer();
             t.Interval = TimeSpan.FromSeconds(secondi);

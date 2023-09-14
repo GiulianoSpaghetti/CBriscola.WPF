@@ -9,7 +9,7 @@
   <Identity
     Name="af372526-11c9-4846-ada6-3d1f752081b9"
     Publisher="CN=Giulio Sorrentino"
-    Version="0.6.4.0" />
+    Version="0.6.3.0" />
 
   <Properties>
     <DisplayName>cbriscolawpf-setup</DisplayName>

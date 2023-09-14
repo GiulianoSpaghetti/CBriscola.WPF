@@ -54,4 +54,5 @@
     <system:String x:Key="a">at</system:String>
     <system:String x:Key="colmazzo">with%20the%20deck</system:String>
     <system:String x:Key="piattaforma">on%20platform</system:String>
+    <system:String x:Key="info">The two-player trump game, without multiplayer, in WPF</system:String>
 </ResourceDictionary>

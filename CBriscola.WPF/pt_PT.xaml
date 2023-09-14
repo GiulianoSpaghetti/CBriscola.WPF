@@ -56,4 +56,5 @@
     <system:String x:Key="a">a</system:String>
     <system:String x:Key="colmazzo">com%20o%20baralho</system:String>
     <system:String x:Key="piattaforma">na%20platfroma</system:String>
+    <system:String x:Key="info">O jogo de trunfo para dois jogadores, sem multijogador, no WPF</system:String>
 </ResourceDictionary>

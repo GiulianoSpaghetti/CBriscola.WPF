@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CBriscola.WPF"
         mc:Ignorable="d"
-        Title="Cbriscola in WPF" Height="1024" Width="1280"
+        Title="CBriscola in WPF" Height="1024" Width="1280"
         Background="Green">
     <Window.Resources>
         <Style TargetType="Label">
@@ -47,8 +47,8 @@
             <Label x:Name="NelMazzoRimangono" Content="Nel Mazzo Rimangono" Grid.Row="2" Grid.Column="4" />
             <Label x:Name="CartaBriscola" Content="Il seme di briscola è" Grid.Row="3" Grid.Column="4" />
             <Image x:Name="Briscola" Grid.Row="4" Grid.Column="4" />
-            <Button x:Name="AppInformazioni" Content="Informazioni" Grid.Row="5" Grid.Column="0" Click="OnInfo_Click" />
-            <Button x:Name="AppOpzioni" Content="Opzioni" Grid.Row="5" Grid.Column="1" Click="OnOpzioni_Click" />
+            <Button x:Name="AppInformazioni" Content="Informazioni" Grid.Row="5" Grid.Column="1" Click="OnInfo_Click" />
+            <Button x:Name="AppOpzioni" Content="Opzioni" Grid.Row="5" Grid.Column="0" Click="OnOpzioni_Click" />
         </Grid>
         <Grid x:Name="Info" Visibility="Collapsed">
             <Grid.RowDefinitions>
@@ -57,12 +57,14 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="CBriscola versione 0.6.1" Grid.Row="0" />
+            <Label Content="CBriscola versione 0.6.4" Grid.Row="0" />
             <Label Content="Giulio Sorrentino ⓒ 2023" Grid.Row="1" />
-            <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="2"/>
-            <Button Content="https://github.com/numerunix/CBriscola.WPF" Click="OnSito_Click" Grid.Row="3" />
-            <Button x:Name="InfoApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="4"/>
+            <Label x:Name="lblinfo" Content="Il gioco della briscola a due giocatori, senza multiplayer, in WPF" Grid.Row="2" />
+            <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="3"/>
+            <Button Content="https://github.com/numerunix/CBriscola.WPF" Click="OnSito_Click" Grid.Row="4" />
+            <Button x:Name="InfoApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="5"/>
         </Grid>
         <Grid x:Name="GOpzioni" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
