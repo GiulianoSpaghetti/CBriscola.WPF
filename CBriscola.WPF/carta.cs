@@ -80,7 +80,7 @@ namespace org.altervista.numerone.framework
                     {
                         carte[i].img = new BitmapImage(new Uri(s + m.GetNome() + "\\" + i + ".png"));
                     }
-                    catch (System.IO.FileNotFoundException ex)
+                    catch (Exception ex)
                     {
                         new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                         m.SetNome("Napoletano");

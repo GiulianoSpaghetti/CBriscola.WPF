@@ -97,15 +97,24 @@ namespace CBriscola.WPF
                 k1.SetValue("Secondi", 5);
                 secondi = 5;
             }
-            if (nomeMazzo=="Napoletano")
-                cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
-            else
-                cartaCpu.Source = new BitmapImage(new Uri("C:\\Program Files\\wxBriscola\\Mazzi\\" + nomeMazzo + "\\retro carte pc.png"));
             e = new ElaboratoreCarteBriscola(briscolaDaPunti);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
             Carta.Inizializza(40, CartaHelperBriscola.GetIstanza(e));
             Carta.CaricaImmagini(m, 40, CartaHelperBriscola.GetIstanza(e), d);
+            if (nomeMazzo == "Napoletano")
+                cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
+            else
+                try
+                {
+                    cartaCpu.Source = new BitmapImage(new Uri("C:\\Program Files\\wxBriscola\\Mazzi\\" + nomeMazzo + "\\retro carte pc.png"));
+
+                }
+                catch (Exception ex)
+                {
+                    cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
+
+                }
 
             g = new Giocatore(new GiocatoreHelperUtente(), nomeUtente, 3);
             cpu = new Giocatore(new GiocatoreHelperCpu(ElaboratoreCarteBriscola.GetCartaBriscola()), nomeCpu, 3);
