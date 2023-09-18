@@ -1,8 +1,10 @@
 # CBriscola.WPF
-La CBriscola in WPF
+La CBriscola in WPF, il primo package indipendente universale per Intermediate Language, si può installare sia su amd64 che su arm64 e gira nativamente.
 
 # Come installare
-winget install GiulioSorrentino.CBriscola.WPF
+# Su Windows
+
+[![winget](https://user-images.githubusercontent.com/49786146/159123313-3bdafdd3-5130-4b0d-9003-40618390943a.png)](https://marticliment.com/wingetui/share?pid=GiulioSorrentino.CBriscola.WPF&pname=CBriscola.WPF&psource=Winget:%20winget)
 
 # Internazionalizzazione
 Aprire il file it_IT.xml, tradurlo interamente, salvarlo con la sigla del linguaggio che si è utilizzato, e poi modificare opportunamente il file app.xaml
