@@ -1,5 +1,5 @@
 # CBriscola.WPF
-La CBriscola in WPF, il primo package indipendente universale per Intermediate Language, si può installare sia su amd64 che su arm64 e gira nativamente.
+La CBriscola in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
 
 # Come installare
 # Su Windows
@@ -21,10 +21,7 @@ https://www.youtube.com/watch?v=_vG73sEWOjQ
 
 # Donazione
 
-[![paypal](https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JZVR4QQFGLR6Q)
-
-Puoi donare anche tramite carta Hype a patto di avere il mio numero di cellulare nella rubrica. Sai dove lo puoi trovare? Sul mio curriculum.
-Apri l'app Hype, fai il login, seleziona PAGAMENTI, INVIA DENARO, seleziona il mio numero nella rubrica, imposta l'importo, INSERISCI LA CAUSALE e segui le istruzioni a video.
+http://numerone.altervista.org/donazioni.php
 
 # Bibliografia
 https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
