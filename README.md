@@ -18,7 +18,8 @@ Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e co
 
 # GamePlay
 https://www.youtube.com/watch?v=_vG73sEWOjQ
-# Donazioni
+
+# Donazione
 
 [![paypal](https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JZVR4QQFGLR6Q)
 
