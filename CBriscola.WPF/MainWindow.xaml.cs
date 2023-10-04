@@ -221,7 +221,7 @@ namespace CBriscola.WPF
                         s = $"{d["PartitaPatta"]}";
                     else
                     {
-                        punti=g.LeggiPunteggi()-cpu.LeggiPunteggi()
+                        punti = g.LeggiPunteggi() - cpu.LeggiPunteggi();
                         if (g.LeggiPunteggi() > cpu.LeggiPunteggi())
                             s = $"{d["HaiVinto"]}";
                         else
