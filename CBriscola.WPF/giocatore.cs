@@ -8,6 +8,8 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 
 namespace org.altervista.numerone.framework
@@ -17,22 +19,22 @@ namespace org.altervista.numerone.framework
 		private string nome;
 		private Carta[] mano;
 		private bool ordinaMano;
-		private UInt16 numeroCarte;
-		private UInt16 iCarta;
-		private UInt16 iCartaGiocata;
-		private UInt16 punteggio;
+		private UInt16 numeroCarte, iCarta, iCartaGiocata, punteggio, totaleCarte;
+		private List<UInt16> precedentiPunteggi;
 		private readonly GiocatoreHelper helper;
 		public enum Carta_GIOCATA { NESSUNA_Carta_GIOCATA = UInt16.MaxValue };
 		public Giocatore(GiocatoreHelper h, string n, UInt16 carte, bool ordina = true)
 		{
+			totaleCarte = carte;
 			ordinaMano = ordina;
 			numeroCarte = carte;
 			iCartaGiocata = (UInt16)(Carta_GIOCATA.NESSUNA_Carta_GIOCATA);
 			punteggio = 0;
 			helper = h;
 			nome = n;
-			mano = new Carta[3];
-			iCarta = 0;
+            punteggio = 0;
+            iCarta = 0;
+			precedentiPunteggi = new List<UInt16>();
 		}
 		public string GetNome() { return nome; }
 		public void SetNome(string n) { nome = n; }
@@ -125,6 +127,28 @@ namespace org.altervista.numerone.framework
 		{
 			return numeroCarte;
 		}
-	}
+
+		public void AggiungiPunteggio()
+		{
+			if (numeroCarte != 0)
+				throw new ArgumentException("Chiamata ad aggiungipunteggio quando le carte ancora non sono finite");
+			precedentiPunteggi.Add(punteggio);
+            punteggio = 0;
+            iCarta = 0;
+			numeroCarte = totaleCarte;
+        }
+
+		public UInt128 LeggiPunteggi() {
+			UInt128 totale = 0;
+			foreach (UInt16 i in precedentiPunteggi)
+				totale += i;
+			return totale;
+		}
+
+		public void AnnullaPunteggi()
+		{
+			precedentiPunteggi.Clear();
+		}
+    }
 
 }

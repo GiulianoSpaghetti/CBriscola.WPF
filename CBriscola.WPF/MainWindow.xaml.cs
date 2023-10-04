@@ -24,7 +24,7 @@ namespace CBriscola.WPF
         private static Carta c, c1, briscola;
         private static Image cartaCpu = new Image();
         private static Image i, i1;
-        private static UInt16 secondi = 5, puntiUtente = 0, puntiCpu = 0;
+        private static UInt16 secondi = 5;
         private static UInt128 partite = 0;
         private static bool avvisaTalloneFinito = true, briscolaDaPunti = false, primaUtente=true;
         private static DispatcherTimer t;
@@ -214,23 +214,26 @@ namespace CBriscola.WPF
                 }
                 else
                 {
-                    puntiUtente += g.GetPunteggio();
-                    puntiCpu += cpu.GetPunteggio();
-                    if (g.GetPunteggio() == cpu.GetPunteggio())
+                    UInt128 punti;
+                    g.AggiungiPunteggio();
+                    cpu.AggiungiPunteggio();
+                    if (g.LeggiPunteggi() == cpu.LeggiPunteggi())
                         s = $"{d["PartitaPatta"]}";
                     else
                     {
-                        if (g.GetPunteggio() > cpu.GetPunteggio())
+                        punti=g.LeggiPunteggi()-cpu.LeggiPunteggi()
+                        if (g.LeggiPunteggi() > cpu.LeggiPunteggi())
                             s = $"{d["HaiVinto"]}";
                         else
                             s = $"{d["HaiPerso"]}";
-                        s = $"{s} {d["per"]} {Math.Abs(puntiUtente - puntiCpu)} {d["punti"]}";
+                        s = $"{s} {d["per"]} {Math.Abs(Decimal.Parse(punti.ToString()))} {d["punti"]}";
                     }
                     if (partite % 2 == 1)
                     {
                         fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}?";
                         fpShare.Visibility = Visibility.Visible;
-                        puntiUtente = puntiCpu = 0;
+                        cpu.AnnullaPunteggi();
+                        g.AnnullaPunteggi();
                     }
                     else
                     {
