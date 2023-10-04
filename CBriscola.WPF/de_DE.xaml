@@ -57,4 +57,5 @@
     <system:String x:Key="a">zu</system:String>
     <system:String x:Key="piattaforma">auf%20der%20Plattform</system:String>
     <system:String x:Key="info">Das Trumpfspiel für zwei Spieler, ohne Multiplayer, in WPF</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Spielt er ein zweites Spiel</system:String>
 </ResourceDictionary>

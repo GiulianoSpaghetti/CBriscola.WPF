@@ -56,5 +56,6 @@
     <system:String x:Key="a">a</system:String>
     <system:String x:Key="colmazzo">con%20la%20baraja</system:String>
     <system:String x:Key="piattaforma">en%20plataforma</system:String>
-    <system:String x:Key="info"></system:String>
+    <system:String x:Key="info">El juego de triunfo para dos jugadores, sin multijugador, en WPF</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">¿Hace un segundo juego</system:String>
 </ResourceDictionary>
