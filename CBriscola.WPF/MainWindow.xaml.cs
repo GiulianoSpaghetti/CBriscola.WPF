@@ -24,7 +24,7 @@ namespace CBriscola.WPF
         private static Carta c, c1, briscola;
         private static Image cartaCpu = new Image();
         private static Image i, i1;
-        private static UInt16 secondi = 5;
+        private static UInt16 secondi = 5, puntiUtente = 0, puntiCpu = 0;
         private static UInt128 partite = 0;
         private static bool avvisaTalloneFinito = true, briscolaDaPunti = false, primaUtente=true;
         private static DispatcherTimer t;
@@ -214,26 +214,23 @@ namespace CBriscola.WPF
                 }
                 else
                 {
-                    UInt128 punti;
-                    g.AggiungiPunteggio();
-                    cpu.AggiungiPunteggio();
-                    if (g.LeggiPunteggi() == cpu.LeggiPunteggi())
+                    puntiUtente += g.GetPunteggio();
+                    puntiCpu += cpu.GetPunteggio();
+                    if (puntiUtente == puntiCpu)
                         s = $"{d["PartitaPatta"]}";
                     else
                     {
-                        punti = g.LeggiPunteggi() - cpu.LeggiPunteggi();
-                        if (g.LeggiPunteggi() > cpu.LeggiPunteggi())
+                        if (puntiUtente > puntiCpu)
                             s = $"{d["HaiVinto"]}";
                         else
                             s = $"{d["HaiPerso"]}";
-                        s = $"{s} {d["per"]} {Math.Abs(Decimal.Parse(punti.ToString()))} {d["punti"]}";
+                        s = $"{s} {d["per"]} {Math.Abs(puntiUtente - puntiCpu)} {d["punti"]}";
                     }
                     if (partite % 2 == 1)
                     {
                         fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}?";
                         fpShare.Visibility = Visibility.Visible;
-                        cpu.AnnullaPunteggi();
-                        g.AnnullaPunteggi();
+                        fpShare.IsEnabled = true;
                     }
                     else
                     {
@@ -322,11 +319,15 @@ namespace CBriscola.WPF
         private void OnOkFp_Click(object sender, EventArgs evt)
         {
             bool cartaBriscola = true;
+            string nomeMazzo = m.GetNome();
             FinePartita.Visibility = Visibility.Collapsed;
+            if (partite % 2 == 0)
+                puntiUtente = puntiCpu = 0;
             if (cbCartaBriscola.IsChecked == false)
                 cartaBriscola = false;
             e = new ElaboratoreCarteBriscola(cartaBriscola);
             m = new Mazzo(e);
+            m.SetNome(nomeMazzo);
             briscola = Carta.GetCarta(ElaboratoreCarteBriscola.GetCartaBriscola());
             g = new Giocatore(new GiocatoreHelperUtente(), g.GetNome(), 3);
             cpu = new Giocatore(new GiocatoreHelperCpu(ElaboratoreCarteBriscola.GetCartaBriscola()), cpu.GetNome(), 3);
@@ -484,7 +485,7 @@ namespace CBriscola.WPF
         {
             var psi = new ProcessStartInfo
             {
-                FileName = $"https://twitter.com/intent/tweet?text={d["ColGioco"]}{g.GetNome()}%20{d["contro"]}%20{cpu.GetNome()}%20{d["efinito"]}%20{g.GetPunteggio()}%20{d["a"]}%20{cpu.GetPunteggio()}%20{d["colmazzo"]}%20{m.GetNome()}%20{d["piattaforma"]}%20{piattaforma}&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fcbriscola.wpf",
+                FileName = $"https://twitter.com/intent/tweet?text={d["ColGioco"]}%20{partite}%20{g.GetNome()}%20{d["contro"]}%20{cpu.GetNome()}%20{d["efinito"]}%20{puntiUtente}%20{d["a"]}%20{puntiCpu}%20{d["colmazzo"]}%20{m.GetNome()}%20{d["piattaforma"]}%20{piattaforma}&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fcbriscola.wpf",
                 UseShellExecute = true
             };
             Process.Start(psi);

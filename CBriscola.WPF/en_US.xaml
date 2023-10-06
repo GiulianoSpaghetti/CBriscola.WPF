@@ -48,7 +48,7 @@
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Unable to create registry key. The option will not be saed</system:String>
     <system:String x:Key="Attenzione">Attention</system:String>
     <system:String x:Key="CercaNuoviMazzi">You can use the wxBriscola decks for a better entertainment</system:String>
-    <system:String x:Key="ColGioco">With%20the%20CBriscolaWPF%20the%20match</system:String>
+    <system:String x:Key="ColGioco">With%20the%20CBriscolaWPF%20the%20match%20number</system:String>
     <system:String x:Key="contro">versus</system:String>
     <system:String x:Key="efinito">is%20finished</system:String>
     <system:String x:Key="a">at</system:String>

@@ -50,7 +50,7 @@
     <system:String x:Key="Esci">Beenden Sie das Programm</system:String>
     <system:String x:Key="File">Datei</system:String>
     <system:String x:Key="Info">?</system:String>
-    <system:String x:Key="ColGioco">Mit%20dem%20CBriscolaWPF%20wird%2das%20Spiel</system:String>
+    <system:String x:Key="ColGioco">Mit%20dem%20CBriscolaWPF%20wird%2das%20Spiel20das%20Nummer-eins-Match</system:String>
     <system:String x:Key="contro">gegen</system:String>
     <system:String x:Key="efinito">beendet</system:String>
     <system:String x:Key="colmazzo">mit%20dem%20Deck</system:String>

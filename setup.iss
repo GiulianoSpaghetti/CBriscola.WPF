@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "CBriscola.WPF"
-#define MyAppVersion "0.6.4"
+#define MyAppVersion "0.6.5"
 #define MyAppPublisher "Giulio Sorrentino"
 #define MyAppURL "gtihub.com/numerunix/cbriscola.wpf"
 #define MyAppExeName "CBriscola.WPF.exe"
@@ -24,11 +24,11 @@ LicenseFile=C:\Users\numer\source\repos\CBriscola.WPF\LICENSE.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\numer
-OutputBaseFilename=cbriscola.wpf-0.6.4
+OutputBaseFilename=cbriscola.wpf-0.6.5-x64
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
-ArchitecturesAllowed=x64 arm64
+ArchitecturesAllowed=x64
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

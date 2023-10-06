@@ -50,7 +50,7 @@
     <system:String x:Key="Esci">Saia</system:String>
     <system:String x:Key="File">Arquivo</system:String>
     <system:String x:Key="Info">?</system:String>
-    <system:String x:Key="ColGioco">Com%20o%20jogo%20CBriscolaWPF%20o%20jogo%20</system:String>
+    <system:String x:Key="ColGioco">Com%20o%20jogo%20CBriscolaWPF%20o%20número%20do%20jogo</system:String>
     <system:String x:Key="contro">contra</system:String>
     <system:String x:Key="efinito">està%20terminado</system:String>
     <system:String x:Key="a">a</system:String>
