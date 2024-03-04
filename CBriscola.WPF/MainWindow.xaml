@@ -59,7 +59,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="CBriscola versione 0.6.5" Grid.Row="0" />
+            <Label Content="CBriscola versione 0.6.7" Grid.Row="0" />
             <Label Content="Giulio Sorrentino ⓒ 2023" Grid.Row="1" />
             <Label x:Name="lblinfo" Content="Il gioco della briscola a due giocatori, senza multiplayer, in WPF" Grid.Row="2" />
             <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="3"/>

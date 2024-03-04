@@ -29,6 +29,7 @@ namespace CBriscola.WPF
         private static bool avvisaTalloneFinito = true, briscolaDaPunti = false, primaUtente=true;
         private static DispatcherTimer t;
         public static string piattaforma;
+        public static readonly string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)}\\wxBriscola\\Mazzi\\";
         RegistryKey k1;
         ResourceDictionary d;
         ElaboratoreCarteBriscola e;
@@ -102,13 +103,15 @@ namespace CBriscola.WPF
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
             Carta.Inizializza(40, CartaHelperBriscola.GetIstanza(e));
-            Carta.CaricaImmagini(m, 40, CartaHelperBriscola.GetIstanza(e), d);
+           if (!Carta.CaricaImmagini(path, m, 40, CartaHelperBriscola.GetIstanza(e), d))
+                new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+
             if (nomeMazzo == "Napoletano")
                 cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
             else
                 try
                 {
-                    cartaCpu.Source = new BitmapImage(new Uri("C:\\Program Files\\wxBriscola\\Mazzi\\" + nomeMazzo + "\\retro carte pc.png"));
+                    cartaCpu.Source = new BitmapImage(new Uri($"{path}{nomeMazzo}\\retro carte pc.png"));
 
                 }
                 catch (Exception ex)
@@ -289,10 +292,9 @@ namespace CBriscola.WPF
         private void OnOpzioni_Click(object sender, EventArgs e)
         {
             List<String> mazzi;
-            String dirs = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)+"\\wxBriscola\\Mazzi";
             try
             {
-                mazzi = new List<String>(Directory.EnumerateDirectories(dirs));
+                mazzi = new List<String>(Directory.EnumerateDirectories(path));
             } catch (System.IO.DirectoryNotFoundException ex)
             {
                 mazzi = new List<string>();
@@ -451,7 +453,9 @@ namespace CBriscola.WPF
             if (lsmazzi.SelectedValue != null)
             {
                 m.SetNome(lsmazzi.SelectedValue.ToString());
-                Carta.CaricaImmagini(m, 40, CartaHelperBriscola.GetIstanza(e), d);
+                if (!Carta.CaricaImmagini(path,m, 40, CartaHelperBriscola.GetIstanza(e), d))
+                    new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+
                 Utente0.Source = g.GetImmagine(0);
                 Utente1.Source = g.GetImmagine(1);
                 Utente2.Source = g.GetImmagine(2);
@@ -459,7 +463,7 @@ namespace CBriscola.WPF
                 briscola = Carta.GetCarta(ElaboratoreCarteBriscola.GetCartaBriscola());
                 Briscola.Source = briscola.GetImmagine();
                 if (m.GetNome() != "Napoletano") 
-                    cartaCpu.Source = new BitmapImage(new Uri(@"C:\\Program Files\\wxBriscola\\Mazzi\\" + m.GetNome() + "\\retro carte pc.png"));
+                    cartaCpu.Source = new BitmapImage(new Uri($"{path}{m.GetNome()}\\retro carte pc.png"));
                 else
                     cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
 
