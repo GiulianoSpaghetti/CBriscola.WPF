@@ -1,9 +1,8 @@
 ## CBriscola.WPF
 La CBriscola in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
 
-## >VIdeo di presentazione
-
-https://youtube.com/live/vsvz-5FrHS0
+## Video di presentazione
+https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=n8fyvb
 
 ## Come installare
 ## Su Windows
