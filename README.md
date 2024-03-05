@@ -13,14 +13,11 @@ https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=n8fyvb
 Aprire il file it_IT.xml, tradurlo interamente, salvarlo con la sigla del linguaggio che si è utilizzato, e poi modificare opportunamente il file app.xaml
 
 ## Librerie
-Per funzionare ha bisogno del .net framework 7.0
+Per funzionare ha bisogno del .net framework 8.0
 
 ## Interazione con la wxBriscola
 Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi della wxBriscola, basta che siano installati in c:\Program Files (x64)\wxBriscola e compariranno per essere selezionati e salvati.
 Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e comunque pienamente raggiungibile.
-
-## GamePlay
-https://www.youtube.com/watch?v=_vG73sEWOjQ
 
 ## Donazione
 
