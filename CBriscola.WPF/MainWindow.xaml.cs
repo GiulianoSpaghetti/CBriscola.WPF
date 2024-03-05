@@ -102,8 +102,8 @@ namespace CBriscola.WPF
             e = new ElaboratoreCarteBriscola(briscolaDaPunti);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
-            Carta.Inizializza(40, CartaHelperBriscola.GetIstanza(e));
-           if (!Carta.CaricaImmagini(path, m, 40, CartaHelperBriscola.GetIstanza(e), d))
+            Carta.Inizializza(40, new CartaHelperBriscola(ElaboratoreCarteBriscola.GetCartaBriscola()));
+           if (!Carta.CaricaImmagini(path, m, 40, d))
                 new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
 
             if (nomeMazzo == "Napoletano")
@@ -330,6 +330,7 @@ namespace CBriscola.WPF
             e = new ElaboratoreCarteBriscola(cartaBriscola);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
+            Carta.SetHelper(new CartaHelperBriscola(ElaboratoreCarteBriscola.GetCartaBriscola()));
             briscola = Carta.GetCarta(ElaboratoreCarteBriscola.GetCartaBriscola());
             g = new Giocatore(new GiocatoreHelperUtente(), g.GetNome(), 3);
             cpu = new Giocatore(new GiocatoreHelperCpu(ElaboratoreCarteBriscola.GetCartaBriscola()), cpu.GetNome(), 3);
@@ -453,7 +454,7 @@ namespace CBriscola.WPF
             if (lsmazzi.SelectedValue != null)
             {
                 m.SetNome(lsmazzi.SelectedValue.ToString());
-                if (!Carta.CaricaImmagini(path,m, 40, CartaHelperBriscola.GetIstanza(e), d))
+                if (!Carta.CaricaImmagini(path,m, 40, d))
                     new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
 
                 Utente0.Source = g.GetImmagine(0);
