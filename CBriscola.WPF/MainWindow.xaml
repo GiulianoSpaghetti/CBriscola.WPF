@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:CBriscola.WPF"
         mc:Ignorable="d"
         Title="CBriscola in WPF" Height="1024" Width="1280"
-        Background="Green">
+        Background="Green"
+        WindowState="Maximized" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="white" />
