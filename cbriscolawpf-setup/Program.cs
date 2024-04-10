@@ -18,7 +18,7 @@ namespace windatefrom_setup
                        //new Property("ALLUSERS","0")
             );
 
-            project.GUID = new Guid("A2941143-09E9-45AD-8017-0DB4C98D80D2");
+            project.GUID = new Guid("DD0F1B46-75C9-4672-AFD4-3985863526E7");
             project.Version = new Version("0.7.0");
             project.Platform = Platform.x64;
             project.SourceBaseDir = "F:\\source\\CBriscola.WPF\\CBriscola.WPF\\bin\\Release\\net8.0-windows10.0.22621.0";

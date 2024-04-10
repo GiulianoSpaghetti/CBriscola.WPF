@@ -6,50 +6,46 @@
     To suppress generation of this file remove `set ide=true` from the PostBuildEvent of the VS project
 </auto-generated>
 -->
-  <Package Compressed="yes" ProductCode="a2941143-09e9-45ad-8017-0db4c9fd90d2" Name="CBriscolaWPF" Language="1033" Version="0.7.0" UpgradeCode="a2941143-09e9-45ad-8017-0db4c98d80d2" Manufacturer="Giulio Sorrentino" InstallerVersion="200">
+  <Package Compressed="yes" ProductCode="dd0f1b46-75c9-4672-afd4-398586a536e7" Name="CBriscolaWPF" Language="1033" Version="0.7.0" UpgradeCode="dd0f1b46-75c9-4672-afd4-3985863526e7" Manufacturer="Giulio Sorrentino" InstallerVersion="200">
     <SummaryInformation Codepage="Windows-1252" Description="Simulatore del gioco della briscola in WPF a due giocatori senza multiplayer." />
     <Media Id="1" Cabinet="CBriscolaWPF.cab" EmbedCab="yes" />
 
     <StandardDirectory Id="ProgramFiles64Folder">
       <Directory Id="INSTALLDIR" Name="CBriscolaWPF">
 
-        <Component Id="Component.CardFramework.WPF.dll_4159701883" Guid="a2941143-09e9-45ad-8017-0db417024bcd" Bitness="always64">
+        <Component Id="Component.CardFramework.WPF.dll_4159701883" Guid="dd0f1b46-75c9-4672-afd4-3985d4aaf1e2" Bitness="always64">
           <File Id="CardFramework.WPF.dll_4159701883" Source="CardFramework.WPF.dll" />
         </Component>
 
-        <Component Id="Component.CBriscola.WPF.deps.json_498033335" Guid="a2941143-09e9-45ad-8017-0db43abfe47f" Bitness="always64">
+        <Component Id="Component.CBriscola.WPF.deps.json_498033335" Guid="dd0f1b46-75c9-4672-afd4-3985f7678a94" Bitness="always64">
           <File Id="CBriscola.WPF.deps.json_498033335" Source="CBriscola.WPF.deps.json" />
         </Component>
 
-        <Component Id="Component.CBriscola.WPF.dll_4059383388" Guid="a2941143-09e9-45ad-8017-0db4a758387c" Bitness="always64">
+        <Component Id="Component.CBriscola.WPF.dll_4059383388" Guid="dd0f1b46-75c9-4672-afd4-39856400de91" Bitness="always64">
           <File Id="CBriscola.WPF.dll_4059383388" Source="CBriscola.WPF.dll" />
         </Component>
 
-        <Component Id="Component.CBriscola.WPF.exe_1720272456" Guid="a2941143-09e9-45ad-8017-0db445a649eb" Bitness="always64">
+        <Component Id="Component.CBriscola.WPF.exe_1720272456" Guid="dd0f1b46-75c9-4672-afd4-3985024eef00" Bitness="always64">
           <File Id="CBriscola.WPF.exe_1720272456" Source="CBriscola.WPF.exe" />
         </Component>
 
-        <Component Id="Component.CBriscola.WPF.pdb_235882084" Guid="a2941143-09e9-45ad-8017-0db49a9fdb6d" Bitness="always64">
-          <File Id="CBriscola.WPF.pdb_235882084" Source="CBriscola.WPF.pdb" />
-        </Component>
-
-        <Component Id="Component.CBriscola.WPF.runtimeconfig.json_3625204300" Guid="a2941143-09e9-45ad-8017-0db436e06cc2" Bitness="always64">
+        <Component Id="Component.CBriscola.WPF.runtimeconfig.json_3625204300" Guid="dd0f1b46-75c9-4672-afd4-3985f38812d7" Bitness="always64">
           <File Id="CBriscola.WPF.runtimeconfig.json_3625204300" Source="CBriscola.WPF.runtimeconfig.json" />
         </Component>
 
-        <Component Id="Component.LICENSE.rtf_179969348" Guid="a2941143-09e9-45ad-8017-0db424e1c28a" Bitness="always64">
+        <Component Id="Component.LICENSE.rtf_179969348" Guid="dd0f1b46-75c9-4672-afd4-3985e189689f" Bitness="always64">
           <File Id="LICENSE.rtf_179969348" Source="LICENSE.rtf" />
         </Component>
 
-        <Component Id="Component.Microsoft.Toolkit.Uwp.Notifications.dll_2446160684" Guid="a2941143-09e9-45ad-8017-0db46e06a819" Bitness="always64">
+        <Component Id="Component.Microsoft.Toolkit.Uwp.Notifications.dll_2446160684" Guid="dd0f1b46-75c9-4672-afd4-39852bae4e2e" Bitness="always64">
           <File Id="Microsoft.Toolkit.Uwp.Notifications.dll_2446160684" Source="Microsoft.Toolkit.Uwp.Notifications.dll" />
         </Component>
 
-        <Component Id="Component.Microsoft.Windows.SDK.NET.dll_2627000721" Guid="a2941143-09e9-45ad-8017-0db42e5744e9" Bitness="always64">
+        <Component Id="Component.Microsoft.Windows.SDK.NET.dll_2627000721" Guid="dd0f1b46-75c9-4672-afd4-3985ebffeafe" Bitness="always64">
           <File Id="Microsoft.Windows.SDK.NET.dll_2627000721" Source="Microsoft.Windows.SDK.NET.dll" />
         </Component>
 
-        <Component Id="Component.WinRT.Runtime.dll_1029479092" Guid="a2941143-09e9-45ad-8017-0db4261dd62d" Bitness="always64">
+        <Component Id="Component.WinRT.Runtime.dll_1029479092" Guid="dd0f1b46-75c9-4672-afd4-3985e3c57c42" Bitness="always64">
           <File Id="WinRT.Runtime.dll_1029479092" Source="WinRT.Runtime.dll" />
         </Component>
 
@@ -58,7 +54,7 @@
 
     <StandardDirectory Id="ProgramMenuFolder">
 
-      <Component Id="Component.CBriscolaWPF__" Guid="a2941143-09e9-45ad-8017-0db4a6fbdda3" Bitness="always64">
+      <Component Id="Component.CBriscolaWPF__" Guid="dd0f1b46-75c9-4672-afd4-398563a383b8" Bitness="always64">
         <Shortcut Id="ProgramMenuFolder.CBriscolaWPF__" WorkingDirectory="INSTALLDIR" Target="[ProgramFiles64Folder]\CBriscolaWPF\CBriscola.WPF.exe" Name="CBriscolaWPF.lnk" />
 
         <CreateFolder />
@@ -82,7 +78,6 @@
       <ComponentRef Id="Component.CBriscola.WPF.deps.json_498033335" />
       <ComponentRef Id="Component.CBriscola.WPF.dll_4059383388" />
       <ComponentRef Id="Component.CBriscola.WPF.exe_1720272456" />
-      <ComponentRef Id="Component.CBriscola.WPF.pdb_235882084" />
       <ComponentRef Id="Component.CBriscola.WPF.runtimeconfig.json_3625204300" />
       <ComponentRef Id="Component.LICENSE.rtf_179969348" />
       <ComponentRef Id="Component.Microsoft.Toolkit.Uwp.Notifications.dll_2446160684" />
