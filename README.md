@@ -22,16 +22,3 @@ Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e co
 ## Donazione
 
 http://numerone.altervista.org/donazioni.php
-
-## Bibliografia
-https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
-
-https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.enumeratedirectories?view=net-7.0#system-io-directory-enumeratedirectories(system-string)
-
-https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-7.0
-
-https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/send-local-toast?tabs=uwp
-
-https://stackoverflow.com/questions/53141969/registry-currentuser-createsubkey-not-creating-any-sub-key
-
-https://stackoverflow.com/questions/1410092/identify-the-operating-system-details-in-c-sharp
