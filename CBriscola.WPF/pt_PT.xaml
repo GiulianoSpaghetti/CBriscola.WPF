@@ -6,7 +6,7 @@
     <system:String x:Key="NelMazzoRimangono">Restam&#160;</system:String>
     <system:String x:Key="carte">&#160;cartas no baralho</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">O naipe de trunfo é</system:String>
-    <system:String x:Key="BriscolaDaPunti">A Carta que designa o naipe de trunfo pode marcar pontos</system:String>
+    <system:String x:Key="BriscolaDaPunti">A carta que designa o trunfo pode ter um peso</system:String>
     <system:String x:Key="AvvisaTallone">Alertas quando o baralho termina</system:String>
     <system:String x:Key="NomeUtente">Nome de usuário</system:String>
     <system:String x:Key="NomeCpu">nome da CPU</system:String>
@@ -42,7 +42,7 @@
     <system:String x:Key="GiocataBriscola">Jogo de trunfoa</system:String>
     <system:String x:Key="LaCpuHaGiocatoIl">A CPU jogou o&#160;</system:String>
     <system:String x:Key="DiBriscola">de trunfo</system:String>
-    <system:String x:Key="GiocataCartaDiValore">Carta de valor jogada</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Cartão com placas de peso jogada</system:String>
     <system:String x:Key="Errore">Erro</system:String>
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Não foi possível criar a chave de registro. Os dados não serão salvos</system:String>
     <system:String x:Key="Attenzione">Atenção</system:String>

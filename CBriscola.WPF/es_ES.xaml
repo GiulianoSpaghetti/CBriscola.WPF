@@ -6,8 +6,8 @@
     <system:String x:Key="NelMazzoRimangono">Quedan&#160;</system:String>
     <system:String x:Key="carte">&#160;cartas en la baraja</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">El palo de triunfo es</system:String>
-    <system:String x:Key="BriscolaDaPunti">La carta que designa el palo de triunfo puede sumar puntos</system:String>
-    <system:String x:Key="AvvisaTallone">Alertas cuando termina el mazo</system:String>
+    <system:String x:Key="BriscolaDaPunti">La tarjeta que designa el triunfo puede tener un peso</system:String>
+    <system:String x:Key="AvvisaTallone">Alertas cuando termina la baraja</system:String>
     <system:String x:Key="NomeUtente">Nombre de usuario</system:String>
     <system:String x:Key="NomeCpu">Nombre de la CPU</system:String>
     <system:String x:Key="secondi">Segundos durante los cuales mostrar las jugadas</system:String>
@@ -42,7 +42,7 @@
     <system:String x:Key="GiocataBriscola">Triunfo jugó</system:String>
     <system:String x:Key="LaCpuHaGiocatoIl">La CPU ha jugado el&#160;</system:String>
     <system:String x:Key="DiBriscola">de triunfo</system:String>
-    <system:String x:Key="GiocataCartaDiValore">Giocata carta di valore</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Tarjeta con placas de peso jugada</system:String>
     <system:String x:Key="Errore">Error</system:String>
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">No se puede crear la clave de registro. Los datos no se guardarán.</system:String>
     <system:String x:Key="Attenzione">Atención</system:String>

@@ -102,7 +102,7 @@ namespace CBriscola.WPF
             e = new ElaboratoreCarteBriscola(briscolaDaPunti);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
-            Carta.Inizializza(40, new CartaHelperBriscola(ElaboratoreCarteBriscola.GetCartaBriscola()));
+            Carta.Inizializza(40, new org.altervista.numerone.framework.briscola.CartaHelper(ElaboratoreCarteBriscola.GetCartaBriscola()));
            if (!Carta.CaricaImmagini(path, m, 40, d))
                 new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
 
@@ -159,6 +159,7 @@ namespace CBriscola.WPF
             fpCancel.Content = $"{d["Annulla"]}";
             fpShare.Content = $"{d["Condividi"]}";
             lblinfo.Content = $"{d["info"]}";
+            lbmazzi.Content = $"{d["Mazzo"]}";
             Briscola.Source = briscola.GetImmagine();
             t = new DispatcherTimer();
             t.Interval = TimeSpan.FromSeconds(secondi);
@@ -180,12 +181,21 @@ namespace CBriscola.WPF
                 {
                     NelMazzoRimangono.Content = $"{d["NelMazzoRimangono"]} {m.GetNumeroCarte()} {d["carte"]}";
                     CartaBriscola.Content = $"{d["IlSemeDiBriscolaE"]}: {briscola.GetSemeStr()}";
-                    if (Briscola.IsVisible && m.GetNumeroCarte() == 0)
+                    if (Briscola.IsVisible)
                     {
-                        NelMazzoRimangono.Visibility = Visibility.Collapsed;
-                        Briscola.Visibility = Visibility.Collapsed;
-                        if (m.GetNumeroCarte() == 2 && avvisaTalloneFinito)
-                            new ToastContentBuilder().AddArgument(d["TalloneFinito"] as string).AddText(d["IlTalloneEFinito"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+
+                        switch (m.GetNumeroCarte())
+                        {
+                            case 2:
+                                if (avvisaTalloneFinito)
+                                    new ToastContentBuilder().AddArgument(d["TalloneFinito"] as string).AddText(d["IlTalloneEFinito"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                                break;
+                            case 0:
+                                NelMazzoRimangono.Visibility = Visibility.Collapsed;
+                                Briscola.Visibility = Visibility.Collapsed;
+                            break;
+
+                        }
                     }
                     Utente0.Source = g.GetImmagine(0);
                     if (cpu.GetNumeroCarte() > 1)
@@ -330,7 +340,7 @@ namespace CBriscola.WPF
             e = new ElaboratoreCarteBriscola(cartaBriscola);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
-            Carta.SetHelper(new CartaHelperBriscola(ElaboratoreCarteBriscola.GetCartaBriscola()));
+            Carta.SetHelper(new org.altervista.numerone.framework.briscola.CartaHelper(ElaboratoreCarteBriscola.GetCartaBriscola()));
             briscola = Carta.GetCarta(ElaboratoreCarteBriscola.GetCartaBriscola());
             g = new Giocatore(new GiocatoreHelperUtente(), g.GetNome(), 3);
             cpu = new Giocatore(new GiocatoreHelperCpu(ElaboratoreCarteBriscola.GetCartaBriscola()), cpu.GetNome(), 3);
@@ -361,10 +371,6 @@ namespace CBriscola.WPF
             NelMazzoRimangono.Visibility = Visibility.Visible;
             CartaBriscola.Content = $"{d["IlSemeDiBriscolaE"]}: {briscola.GetSemeStr()}";
             CartaBriscola.Visibility = Visibility.Visible;
-            lbmazzi.Content = $"{d["Mazzo"]} :";
-            fpOk.Content = $"{d["Ok"]}";
-            fpCancel.Content = $"{d["Annulla"]}";
-            fpShare.Content = $"{d["Condividi"]}";
             Briscola.Source = briscola.GetImmagine();
             Briscola.Visibility = Visibility.Visible;
             primaUtente = !primaUtente;
@@ -445,7 +451,17 @@ namespace CBriscola.WPF
             }
             catch (FormatException ex)
             {
-                txtSecondi.Text = $"{d["ValoreNonValido"]}";
+                new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                return;
+            }
+            catch (OverflowException ex1)
+            {
+                new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                return;
+            }
+            if (secondi <1 || secondi > 10)
+            {
+                new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                 return;
             }
             t.Interval = TimeSpan.FromSeconds(secondi);
@@ -502,7 +518,7 @@ namespace CBriscola.WPF
         {
             var psi = new ProcessStartInfo
             {
-                FileName = "https://github.com/numerunix/cbriscola.WPF",
+                FileName = "https://github.com/GiulianoSpaghetti/cbriscola.WPF",
                 UseShellExecute = true
             };
             Process.Start(psi);

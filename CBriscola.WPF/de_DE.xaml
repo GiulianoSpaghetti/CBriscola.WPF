@@ -6,7 +6,7 @@
     <system:String x:Key="NelMazzoRimangono">Es sind noch&#160;</system:String>
     <system:String x:Key="carte">&#160;Karten im Stapel</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">Der Trumpfanzug ist</system:String>
-    <system:String x:Key="BriscolaDaPunti">Die Karte mit der Trumpffarbe kann punkten</system:String>
+    <system:String x:Key="BriscolaDaPunti">Die Karte, die den Trumpf bezeichnet, kann ein Gewicht haben</system:String>
     <system:String x:Key="AvvisaTallone">Warnungen, wenn das Deck endet</system:String>
     <system:String x:Key="NomeUtente">Nutzername</system:String>
     <system:String x:Key="NomeCpu">CPU-Name</system:String>
@@ -24,7 +24,7 @@
     <system:String x:Key="ValoreNonValido">Ungültiger rvalue</system:String>
     <system:String x:Key="Mazzo">Deck</system:String>
     <system:String x:Key="Ok">Ja</system:String>
-    <system:String x:Key="Anulla">NEIN</system:String>
+    <system:String x:Key="Annulla">NEIN</system:String>
     <system:String x:Key="Condividi">Aktie</system:String>
     <system:String x:Key="bastoni">Sticks</system:String>
     <system:String x:Key="coppe">Cups</system:String>
@@ -42,7 +42,7 @@
     <system:String x:Key="GiocataBriscola">Trump-Spiel</system:String>
     <system:String x:Key="LaCpuHaGiocatoIl">Die CPU hat die gespielt&#160;</system:String>
     <system:String x:Key="DiBriscola">der Briscola</system:String>
-    <system:String x:Key="GiocataCartaDiValore">Wertkarte gespielt</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Karte mit ausgespieltem Gewicht</system:String>
     <system:String x:Key="Errore">Fehler</system:String>
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Registrierungsschlüssel kann nicht erstellt werden. Die Daten werden nicht gespeichert</system:String>
     <system:String x:Key="Attenzione">Aufmerksamkeit</system:String>

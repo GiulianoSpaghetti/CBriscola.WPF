@@ -6,7 +6,7 @@
     <system:String x:Key="NelMazzoRimangono">Il reste</system:String>
     <system:String x:Key="carte">&#160;cartes dans le jeu</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">Le costume d'atout est</system:String>
-    <system:String x:Key="BriscolaDaPunti">La Carte désignant la couleur d'atout peut marquer des points</system:String>
+    <system:String x:Key="BriscolaDaPunti">La carte désignant l'atout peut avoir un poids</system:String>
     <system:String x:Key="AvvisaTallone">Alertes lorsque le jeu se termine</system:String>
     <system:String x:Key="NomeUtente">Nom d'utilisateur</system:String>
     <system:String x:Key="NomeCpu">Nom du processeur</system:String>
@@ -42,7 +42,7 @@
     <system:String x:Key="GiocataBriscola">Atout joue</system:String>
     <system:String x:Key="LaCpuHaGiocatoIl">Le CPU a joué le&#160;</system:String>
     <system:String x:Key="DiBriscola">d'atout</system:String>
-    <system:String x:Key="GiocataCartaDiValore">Carte de valeur jouée</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Carte avec poids jouée</system:String>
     <system:String x:Key="Errore">Erreur</system:String>
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Impossible de créer la clé de registre. Les données ne seront pas enregistrées</system:String>
     <system:String x:Key="Attenzione">Attention</system:String>
@@ -50,7 +50,7 @@
     <system:String x:Key="Esci">Quitter</system:String>
     <system:String x:Key="File">Archive</system:String>
     <system:String x:Key="Info">?</system:String>
-    <system:String x:Key="ColGioco">Avec%20le%20jeu%20CBriscolaWPF%20le%20numéro%de%jeu</system:String>
+    <system:String x:Key="ColGioco">Avec%20le%20jeu%20CBriscolaWPF%20le%20numéro%20de%20jeu</system:String>
     <system:String x:Key="contro">contre</system:String>
     <system:String x:Key="efinito">ça%20a%20fini</system:String>
     <system:String x:Key="a">-</system:String>

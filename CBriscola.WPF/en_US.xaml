@@ -7,7 +7,7 @@
     <system:String x:Key="NelMazzoRimangono">There are</system:String>
     <system:String x:Key="carte">left cards in the deck</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">The trump seed is</system:String>
-    <system:String x:Key="BriscolaDaPunti">The card deisgnating the trump seed can score points</system:String>
+    <system:String x:Key="BriscolaDaPunti">The card deisgnating the trump seed can have a weight</system:String>
     <system:String x:Key="AvvisaTallone">Alert when the deck ends</system:String>
     <system:String x:Key="NomeUtente">User name</system:String>
     <system:String x:Key="NomeCpu">Cpu name</system:String>
@@ -43,7 +43,7 @@
     <system:String x:Key="GiocataBriscola">Briscola was played</system:String>
     <system:String x:Key="LaCpuHaGiocatoIl">The CPU has gamed the</system:String>
     <system:String x:Key="DiBriscola">of Briscola</system:String>
-    <system:String x:Key="GiocataCartaDiValore">Played card with value</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Card with weight played</system:String>
     <system:String x:Key="Errore">Error</system:String>
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Unable to create registry key. The option will not be saed</system:String>
     <system:String x:Key="Attenzione">Attention</system:String>
