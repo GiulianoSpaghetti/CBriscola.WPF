@@ -83,10 +83,10 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Label x:Name="opNomeUtente" Grid.Row="0" Grid.Column="0"/>
-            <TextBox x:Name="txtNomeUtente" Grid.Row="0" Grid.Column="1" />
+            <TextBox x:Name="txtNomeUtente" Grid.Row="0" Grid.Column="1"  TextWrapping="NoWrap" AcceptsReturn="False" />
             <Label x:Name="opNomeCpu" Grid.Row="1" Grid.Column="0" />
-            <TextBox x:Name="txtCpu" Grid.Row="1" Grid.Column="1" />
-            <TextBox x:Name="txtSecondi" Grid.Row="2" Grid.Column="1" />
+            <TextBox x:Name="txtCpu" Grid.Row="1" Grid.Column="1" TextWrapping="NoWrap" AcceptsReturn="False" />
+            <TextBox x:Name="txtSecondi" Grid.Row="2" Grid.Column="1" TextWrapping="NoWrap" AcceptsReturn="False" />
             <Label x:Name="Secondi" Grid.Row="2" Grid.Column="0" />
             <CheckBox x:Name="cbCartaBriscola" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="True" />
             <Label x:Name="lbCartaBriscola" Grid.Row="3" Grid.Column="1" />
