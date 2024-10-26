@@ -20,7 +20,7 @@
     <system:String x:Key="per">par</system:String>
     <system:String x:Key="punti">points</system:String>
     <system:String x:Key="PartitaFinita">Le match est terminé</system:String>
-    <system:String x:Key="NuovaPartita">Voulez-vous commencer un nouveau jeu</system:String>
+    <system:String x:Key="NuovaPartita">Voulez-vous commencer un nouveau jeu?</system:String>
     <system:String x:Key="ValoreNonValido">rvalue invalide</system:String>
     <system:String x:Key="Mazzo">Plateau</system:String>
     <system:String x:Key="Ok">Oui</system:String>
@@ -57,5 +57,5 @@
     <system:String x:Key="colmazzo">avec%20le%20plateu</system:String>
     <system:String x:Key="piattaforma">sur%20la%20plateforme</system:String>
     <system:String x:Key="info">Le jeu d'atout à deux joueurs, sans multijoueur, dans WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">Est-ce qu'il joue un deuxième jeu</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Est-ce qu'il joue un deuxième jeu?</system:String>
 </ResourceDictionary>
