@@ -241,13 +241,13 @@ namespace CBriscola.WPF
                     }
                     if (partite % 2 == 1)
                     {
-                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}?";
+                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}";
                         fpShare.Visibility = Visibility.Visible;
                         fpShare.IsEnabled = true;
                     }
                     else
                     {
-                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["EffettuaSecondaPartita"]}?";
+                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["EffettuaSecondaPartita"]}";
                         fpShare.Visibility = Visibility.Collapsed;
                     }
                     Applicazione.Visibility = Visibility.Collapsed;
