@@ -7,7 +7,7 @@
     <system:String x:Key="NelMazzoRimangono">There are</system:String>
     <system:String x:Key="carte">cards left in the deck</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">The trump seed is</system:String>
-    <system:String x:Key="BriscolaDaPunti">The card deisgnating the trump seed can have a weight</system:String>
+    <system:String x:Key="BriscolaDaPunti">The card designating the trump seed can have a weight</system:String>
     <system:String x:Key="AvvisaTallone">Alert when the deck ends</system:String>
     <system:String x:Key="NomeUtente">User name</system:String>
     <system:String x:Key="NomeCpu">Cpu name</system:String>
