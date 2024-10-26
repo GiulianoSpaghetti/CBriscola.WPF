@@ -20,7 +20,7 @@
     <system:String x:Key="per">por</system:String>
     <system:String x:Key="punti">puntos</system:String>
     <system:String x:Key="PartitaFinita">El partido ha terminado</system:String>
-    <system:String x:Key="NuovaPartita">¿Quieres empezar un nuevo juego</system:String>
+    <system:String x:Key="NuovaPartita">¿Quieres empezar un nuevo juego?</system:String>
     <system:String x:Key="ValoreNonValido">Valor no válido</system:String>
     <system:String x:Key="Mazzo">Baraja</system:String>
     <system:String x:Key="Ok">Sí</system:String>
@@ -57,5 +57,5 @@
     <system:String x:Key="colmazzo">con%20la%20baraja</system:String>
     <system:String x:Key="piattaforma">en%20plataforma</system:String>
     <system:String x:Key="info">El juego de triunfo para dos jugadores, sin multijugador, en WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">¿Hace un segundo juego</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">¿Hace un segundo juego?</system:String>
 </ResourceDictionary>
