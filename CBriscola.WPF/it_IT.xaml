@@ -20,7 +20,7 @@
     <system:String x:Key="per">per</system:String>
     <system:String x:Key="punti">punti</system:String>
     <system:String x:Key="PartitaFinita">La partita è finita</system:String>
-    <system:String x:Key="NuovaPartita">Vuoi effettuare una nuova partita</system:String>
+    <system:String x:Key="NuovaPartita">Vuoi effettuare una nuova partita?</system:String>
     <system:String x:Key="ValoreNonValido">Valore non valido</system:String>
     <system:String x:Key="Mazzo">Mazzo</system:String>
     <system:String x:Key="Ok">Si</system:String>
@@ -57,5 +57,5 @@
     <system:String x:Key="a">a</system:String>
     <system:String x:Key="piattaforma">su%20piattaforma</system:String>
     <system:String x:Key="info">Il gioco della briscola a due giocatori, senza multiplayer, in WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">Vuoi effettuare la seconda partita</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Vuoi effettuare la seconda partita?</system:String>
 </ResourceDictionary>
