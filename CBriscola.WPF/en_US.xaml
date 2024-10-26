@@ -21,7 +21,7 @@
     <system:String x:Key="per">for</system:String>
     <system:String x:Key="punti">points</system:String>
     <system:String x:Key="PartitaFinita">Game over</system:String>
-    <system:String x:Key="NuovaPartita">Do you wantto play again?</system:String>
+    <system:String x:Key="NuovaPartita">Do you want to play again?</system:String>
     <system:String x:Key="ValoreNonValido">Invalid value</system:String>
     <system:String x:Key="Mazzo">Deck</system:String>
     <system:String x:Key="Ok">Yes</system:String>
@@ -37,7 +37,7 @@
     <system:String x:Key="Picche">Spades</system:String>
     <system:String x:Key="di">of</system:String>
     <system:String x:Key="MazzoIncompleto">The deck is incomplete</system:String>
-    <system:String x:Key="CaricatoNapoletano">THe deck is incomplete. The Neapolitan deck will be loaded.</system:String>
+    <system:String x:Key="CaricatoNapoletano">The deck is incomplete. The Neapolitan deck will be loaded.</system:String>
     <system:String x:Key="TalloneFinito">Deck Finished</system:String>
     <system:String x:Key="IlTalloneEFinito">The deck is finished</system:String>
     <system:String x:Key="GiocataBriscola">Briscola was played</system:String>
@@ -55,5 +55,5 @@
     <system:String x:Key="colmazzo">with%20the%20deck</system:String>
     <system:String x:Key="piattaforma">on%20platform</system:String>
     <system:String x:Key="info">The two-player trump game, without multiplayer, in WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">Do you want to play a second game</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Do you want to play a second game?</system:String>
 </ResourceDictionary>
