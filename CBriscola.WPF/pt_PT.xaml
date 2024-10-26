@@ -20,7 +20,7 @@
     <system:String x:Key="per">por</system:String>
     <system:String x:Key="punti">pontos</system:String>
     <system:String x:Key="PartitaFinita">A partida acabou</system:String>
-    <system:String x:Key="NuovaPartita">Você quer começar um novo jogo</system:String>
+    <system:String x:Key="NuovaPartita">Você quer começar um novo jogo?</system:String>
     <system:String x:Key="ValoreNonValido">rvalue inválido</system:String>
     <system:String x:Key="Mazzo">Baralho</system:String>
     <system:String x:Key="Ok">Sim</system:String>
@@ -57,5 +57,5 @@
     <system:String x:Key="colmazzo">com%20o%20baralho</system:String>
     <system:String x:Key="piattaforma">na%20platfroma</system:String>
     <system:String x:Key="info">O jogo de trunfo para dois jogadores, sem multijogador, no WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">Você quer jogar um segundo jogo</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Você quer jogar um segundo jogo?</system:String>
 </ResourceDictionary>
