@@ -6,8 +6,8 @@
     <system:String x:Key="PuntiDiSuffisso">&#160;points</system:String>
     <system:String x:Key="NelMazzoRimangono">There are</system:String>
     <system:String x:Key="carte">cards left in the deck</system:String>
-    <system:String x:Key="IlSemeDiBriscolaE">The trump seed is</system:String>
-    <system:String x:Key="BriscolaDaPunti">The card designating the trump seed can have a weight</system:String>
+    <system:String x:Key="IlSemeDiBriscolaE">The trump suit is</system:String>
+    <system:String x:Key="BriscolaDaPunti">The card designating the trump suit can have a weight</system:String>
     <system:String x:Key="AvvisaTallone">Alert when the deck ends</system:String>
     <system:String x:Key="NomeUtente">User name</system:String>
     <system:String x:Key="NomeCpu">Cpu name</system:String>
@@ -15,7 +15,7 @@
     <system:String x:Key="Applicazione">Application</system:String>
     <system:String x:Key="Informazioni">Informations</system:String>
     <system:String x:Key="Opzioni">Options</system:String>
-    <system:String x:Key="PartitaPatta">THe game is drown</system:String>
+    <system:String x:Key="PartitaPatta">The game is drown</system:String>
     <system:String x:Key="HaiVinto">You win</system:String>
     <system:String x:Key="HaiPerso">Yo losy</system:String>
     <system:String x:Key="per">for</system:String>
@@ -37,7 +37,7 @@
     <system:String x:Key="Picche">Spades</system:String>
     <system:String x:Key="di">of</system:String>
     <system:String x:Key="MazzoIncompleto">The deck is incomplete</system:String>
-    <system:String x:Key="CaricatoNapoletano">The deck is incomplete. The Neapolitan deck will be loaded.</system:String>
+    <system:String x:Key="CaricatoNapoletano">THe deck is incomplete. The Neapolitan deck will be loaded.</system:String>
     <system:String x:Key="TalloneFinito">Deck Finished</system:String>
     <system:String x:Key="IlTalloneEFinito">The deck is finished</system:String>
     <system:String x:Key="GiocataBriscola">Briscola was played</system:String>
@@ -45,7 +45,7 @@
     <system:String x:Key="DiBriscola">of Briscola</system:String>
     <system:String x:Key="GiocataCartaDiValore">Card with weight played</system:String>
     <system:String x:Key="Errore">Error</system:String>
-    <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Unable to create registry key. The option will not be saed</system:String>
+    <system:String x:Key="ImpossibileCreareChiaveDiRegistro">Unable to create registry key. The option will not be saved</system:String>
     <system:String x:Key="Attenzione">Attention</system:String>
     <system:String x:Key="CercaNuoviMazzi">You can use the wxBriscola decks for a better entertainment</system:String>
     <system:String x:Key="ColGioco">With%20the%20CBriscolaWPF%20the%20match%20number</system:String>
