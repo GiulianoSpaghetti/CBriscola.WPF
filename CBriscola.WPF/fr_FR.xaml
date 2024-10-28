@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿ <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="PuntiDiPrefisso">Points de&#160;</system:String>
@@ -36,7 +36,7 @@
     <system:String x:Key="Picche">Piques</system:String>
     <system:String x:Key="di">&#160;de&#160;</system:String>
     <system:String x:Key="MazzoIncompleto">Le plateau est incomplet</system:String>
-    <system:String x:Key="CaricatoNapoletano">Le plateau est incomplet. Le jeu napolitain sera chargé</system:String>
+    <system:String x:Key="CaricatoNapoletano">Le plateau est incomplet. Le plateau napolitain sera chargé</system:String>
     <system:String x:Key="TalloneFinito">Plateau Terminé</system:String>
     <system:String x:Key="IlTalloneEFinito">Le plateau est terminé</system:String>
     <system:String x:Key="GiocataBriscola">Atout joue</system:String>
@@ -57,5 +57,5 @@
     <system:String x:Key="colmazzo">avec%20le%20plateu</system:String>
     <system:String x:Key="piattaforma">sur%20la%20plateforme</system:String>
     <system:String x:Key="info">Le jeu d'atout à deux joueurs, sans multijoueur, dans WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">Est-ce qu'il joue un deuxième jeu?</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Voulez-vous faire un deuxième jeu?</system:String>
 </ResourceDictionary>

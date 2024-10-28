@@ -4,7 +4,7 @@
     <system:String x:Key="PuntiDiPrefisso">Puntos de&#160;</system:String>
     <system:String x:Key="PuntiDiSuffisso">&#160;</system:String>
     <system:String x:Key="NelMazzoRimangono">Quedan&#160;</system:String>
-    <system:String x:Key="carte">&#160;cartas en la baraja</system:String>
+    <system:String x:Key="carte">&#160;tarjeta en la baraja</system:String>
     <system:String x:Key="IlSemeDiBriscolaE">El palo de triunfo es</system:String>
     <system:String x:Key="BriscolaDaPunti">La tarjeta que designa el triunfo puede tener un peso</system:String>
     <system:String x:Key="AvvisaTallone">Alertas cuando termina la baraja</system:String>
@@ -14,14 +14,14 @@
     <system:String x:Key="Applicazione">Solicitud</system:String>
     <system:String x:Key="Informazioni">Informaciones</system:String>
     <system:String x:Key="Opzioni">Opciones</system:String>
-    <system:String x:Key="PartitaPatta">El juego esta dibujado</system:String>
+    <system:String x:Key="PartitaPatta">El juego esta empatado</system:String>
     <system:String x:Key="HaiVinto">Ganaste</system:String>
     <system:String x:Key="HaiPerso">Yo perdido</system:String>
     <system:String x:Key="per">por</system:String>
     <system:String x:Key="punti">puntos</system:String>
     <system:String x:Key="PartitaFinita">El partido ha terminado</system:String>
     <system:String x:Key="NuovaPartita">¿Quieres empezar un nuevo juego?</system:String>
-    <system:String x:Key="ValoreNonValido">Valor no válido</system:String>
+    <system:String x:Key="ValoreNonValido">Valor r no válido</system:String>
     <system:String x:Key="Mazzo">Baraja</system:String>
     <system:String x:Key="Ok">Sí</system:String>
     <system:String x:Key="Annulla">No</system:String>
@@ -39,14 +39,14 @@
     <system:String x:Key="CaricatoNapoletano">La baraja está incompleta. La baraja napolitana estará cargada.</system:String>
     <system:String x:Key="TalloneFinito">Baraja Terminada</system:String>
     <system:String x:Key="IlTalloneEFinito">La baraja está terminada</system:String>
-    <system:String x:Key="GiocataBriscola">Triunfo jugó</system:String>
+    <system:String x:Key="GiocataBriscola">Se ha jugado el triunfo</system:String>
     <system:String x:Key="LaCpuHaGiocatoIl">La CPU ha jugado el&#160;</system:String>
     <system:String x:Key="DiBriscola">de triunfo</system:String>
-    <system:String x:Key="GiocataCartaDiValore">Tarjeta con placas de peso jugada</system:String>
+    <system:String x:Key="GiocataCartaDiValore">Tarjeta con peso jugada</system:String>
     <system:String x:Key="Errore">Error</system:String>
     <system:String x:Key="ImpossibileCreareChiaveDiRegistro">No se puede crear la clave de registro. Los datos no se guardarán.</system:String>
     <system:String x:Key="Attenzione">Atención</system:String>
-    <system:String x:Key="CercaNuoviMazzi">Puedes usar mazos wxBriscola para aumentar el nivel de diversión</system:String>
+    <system:String x:Key="CercaNuoviMazzi">Puedes usar los barajas de wxBriscola para aumentar el nivel de diversión</system:String>
     <system:String x:Key="Esci">Salir</system:String>
     <system:String x:Key="File">Archivo</system:String>
     <system:String x:Key="Info">?</system:String>
@@ -57,5 +57,5 @@
     <system:String x:Key="colmazzo">con%20la%20baraja</system:String>
     <system:String x:Key="piattaforma">en%20plataforma</system:String>
     <system:String x:Key="info">El juego de triunfo para dos jugadores, sin multijugador, en WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">¿Hace un segundo juego?</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">¿Quieres hacer el segundo juego?</system:String>
 </ResourceDictionary>
