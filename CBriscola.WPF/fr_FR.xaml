@@ -57,5 +57,5 @@
     <system:String x:Key="colmazzo">avec%20le%20plateu</system:String>
     <system:String x:Key="piattaforma">sur%20la%20plateforme</system:String>
     <system:String x:Key="info">Le jeu d'atout à deux joueurs, sans multijoueur, dans WPF</system:String>
-    <system:String x:Key="EffettuaSecondaPartita">Voulez-vous faire un deuxième jeu?</system:String>
+    <system:String x:Key="EffettuaSecondaPartita">Voulez-vous jouer au deuxième jeu?</system:String>
 </ResourceDictionary>
