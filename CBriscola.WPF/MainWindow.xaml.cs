@@ -206,15 +206,16 @@ namespace CBriscola.WPF
                     i1.Visibility = Visibility.Visible;
                     Giocata0.Visibility = Visibility.Collapsed;
                     Giocata1.Visibility = Visibility.Collapsed;
-                    if (cpu.GetNumeroCarte() == 2)
+                    switch (cpu.GetNumeroCarte())
                     {
-                        Utente2.Visibility = Visibility.Collapsed;
-                        Cpu2.Visibility = Visibility.Collapsed;
-                    }
-                    if (cpu.GetNumeroCarte() == 1)
-                    {
-                        Utente1.Visibility = Visibility.Collapsed;
-                        Cpu1.Visibility = Visibility.Collapsed;
+                        case 2:
+                            Utente2.Visibility = Visibility.Collapsed;
+                            Cpu2.Visibility = Visibility.Collapsed;
+                        break;
+                        case 1:
+                            Utente1.Visibility = Visibility.Collapsed;
+                            Cpu1.Visibility = Visibility.Collapsed;
+                        break;
                     }
                     if (primo == cpu)
                     {
