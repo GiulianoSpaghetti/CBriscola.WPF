@@ -435,6 +435,7 @@ namespace CBriscola.WPF
         }
         public void OnOk_Click(Object source, EventArgs evt)
         {
+            UInt16 sec;
             g.SetNome(txtNomeUtente.Text);
             cpu.SetNome(txtCpu.Text);
             if (cbCartaBriscola.IsChecked == false)
@@ -447,7 +448,7 @@ namespace CBriscola.WPF
                 avvisaTalloneFinito = true;
             try
             {
-                secondi = UInt16.Parse(txtSecondi.Text);
+                sec = UInt16.Parse(txtSecondi.Text);
             }
             catch (FormatException ex)
             {
@@ -459,11 +460,12 @@ namespace CBriscola.WPF
                 new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                 return;
             }
-            if (secondi <1 || secondi > 10)
+            if (sec <1 || sec > 10)
             {
                 new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                 return;
             }
+            secondi = sec;
             t.Interval = TimeSpan.FromSeconds(secondi);
             NomeUtente.Content = g.GetNome();
             NomeCpu.Content = cpu.GetNome();
