@@ -10,7 +10,7 @@
     <system:String x:Key="AvvisaTallone">Avvisa quando il tallone finisce</system:String>
     <system:String x:Key="NomeUtente">Nome Utente</system:String>
     <system:String x:Key="NomeCpu">Nome Cpu</system:String>
-    <system:String x:Key="secondi">Secondi</system:String>
+    <system:String x:Key="secondi">Secondi in cui mostrare le giocate</system:String>
     <system:String x:Key="Applicazione">Applicazione</system:String>
     <system:String x:Key="Informazioni">Informazioni</system:String>
     <system:String x:Key="Opzioni">Opzioni</system:String>
