@@ -19,6 +19,10 @@ Per funzionare ha bisogno del .net framework 8.0
 Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi della wxBriscola, basta che siano installati in c:\Program Files (x64)\wxBriscola e compariranno per essere selezionati e salvati.
 Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e comunque pienamente raggiungibile.
 
+## Bug noti
+
+Quando si modifica il mazzo di gioco con almeno una carta giocata, le carte sul tavolo non vengono cambiate.
+
 ## Donazione
 
 http://numerone.altervista.org/donazioni.php
