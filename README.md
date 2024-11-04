@@ -2,7 +2,7 @@
 La CBriscola in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
 
 ## Video di presentazione
-https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=n8fyvb
+https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=setyuT
 
 ## Come installare
 ## Su Windows
