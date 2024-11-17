@@ -1,5 +1,5 @@
 ## CBriscola.WPF
-La CBriscola in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
+Quello che avete davanti non è il gioco della briscola come si intende oggi, perché oggi tutti i simulatori di briscola dicono "hai preso l'asso, bravo" e finisce lì. Quello che avete davanti è un simulatore equo e professionale, con punteggio aggiornato in tempo reale, in modo da poter decidere se "rischiare" o meno coscientemente, in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
 
 ## Video di presentazione
 https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=setyuT
