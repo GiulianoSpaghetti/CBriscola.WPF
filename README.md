@@ -1,7 +1,7 @@
 ## CBriscola.WPF
 Quello che avete davanti non è il gioco della briscola come si intende oggi, perché oggi tutti i simulatori di briscola dicono "hai preso l'asso, bravo" e finisce lì. Quello che avete davanti è un simulatore equo e professionale, con punteggio aggiornato in tempo reale, in modo da poter decidere se "rischiare" o meno coscientemente, in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
 
-Sembra strano a dirsi, ma è hard core, perché consente di cambiare in ogni istante l'andamento della partita coscientemente con le proprie scelte.
+Sembra strano a dirsi, ma è hard core (i vecchietti che urlano "guarda che sto piombo a denari" davanti al monitor), perché consente di cambiare in ogni istante l'andamento della partita coscientemente con le proprie scelte.
 
 Questo gioco dimostra che la teoria dei giochi è vera: l'algorimo brevettato funziona su tutti i giochi di carte senza piatto.
 
