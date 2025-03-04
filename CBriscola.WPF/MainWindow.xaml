@@ -60,8 +60,8 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="CBriscola versione 0.7" Grid.Row="0" />
-            <Label Content="Giulio Sorrentino ⓒ 2023-2024" Grid.Row="1" />
+            <Label Content="CBriscola versione 0.7.1" Grid.Row="0" />
+            <Label Content="Giulio Sorrentino ⓒ 2023-2025" Grid.Row="1" />
             <Label x:Name="lblinfo" Content="Il gioco della briscola a due giocatori, senza multiplayer, in WPF" Grid.Row="2" />
             <Label Content="Licenza: GPL v3 o, secondo la tua opionione, qualsiasi versione successiva" Grid.Row="3"/>
             <Button Content="https://github.com/numerunix/CBriscola.WPF" Click="OnSito_Click" Grid.Row="4" />
@@ -83,16 +83,16 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Label x:Name="opNomeUtente" Grid.Row="0" Grid.Column="0"/>
-            <TextBox x:Name="txtNomeUtente" Grid.Row="0" Grid.Column="1" />
+            <TextBox x:Name="txtNomeUtente" Grid.Row="0" Grid.Column="1" TextWrapping="NoWrap" AcceptsReturn="False"/>
             <Label x:Name="opNomeCpu" Grid.Row="1" Grid.Column="0" />
-            <TextBox x:Name="txtCpu" Grid.Row="1" Grid.Column="1" />
-            <TextBox x:Name="txtSecondi" Grid.Row="2" Grid.Column="1" />
+            <TextBox x:Name="txtCpu" Grid.Row="1" Grid.Column="1"  TextWrapping="NoWrap" AcceptsReturn="False"/>
+            <TextBox x:Name="txtSecondi" Grid.Row="2" Grid.Column="1"  TextWrapping="NoWrap" AcceptsReturn="False"/>
             <Label x:Name="Secondi" Grid.Row="2" Grid.Column="0" />
             <CheckBox x:Name="cbCartaBriscola" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="True" />
             <Label x:Name="lbCartaBriscola" Grid.Row="3" Grid.Column="1" />
             <CheckBox x:Name="cbAvvisaTallone" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="True" />
             <Label x:Name="lbAvvisaTallone" Grid.Row="4" Grid.Column="1" />
-            <Label x:Name="lbmazzi" Content="Mazzi" Grid.Row="5" Grid.Column="0" />
+            <Label x:Name="lbmazzi" Grid.Row="5" Grid.Column="0" />
             <ListBox x:Name="lsmazzi" Grid.Row="5" Grid.Column="1" />
             <Button Content="OK" Click="OnOk_Click"  Grid.Row="6" Grid.Column="1"/>
             <Button x:Name="OpzioniApplicazione" Content="Applicazione" Click="OnApp_Click" Grid.Row="7" Grid.Column="0"/>

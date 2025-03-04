@@ -26,7 +26,7 @@ namespace CBriscola.WPF
         private static Image i, i1;
         private static UInt16 secondi = 5, puntiUtente = 0, puntiCpu = 0;
         private static UInt128 partite = 0;
-        private static bool avvisaTalloneFinito = true, briscolaDaPunti = false, primaUtente=true;
+        private static bool avvisaTalloneFinito = true, briscolaDaPunti = false, primaUtente = true;
         private static DispatcherTimer t;
         public static string piattaforma;
         public static readonly string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)}\\wxBriscola\\Mazzi\\";
@@ -46,30 +46,31 @@ namespace CBriscola.WPF
             }
             catch (ResourceReferenceKeyNotFoundException ex)
             { d = this.FindResource("en") as ResourceDictionary; }
-            String nomeUtente="", nomeCpu="", nomeMazzo = "Napoletano";
+            String nomeUtente = "", nomeCpu = "", nomeMazzo = "Napoletano";
 
             RegistryKey k = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
             k1 = k.OpenSubKey("CBriscola", true);
             if (k1 != null)
             {
-                nomeUtente=(String)k1.GetValue("NomeUtente", "");
-                nomeCpu=(String) k1.GetValue("NomeCpu", "");
+                nomeUtente = (String)k1.GetValue("NomeUtente", "");
+                nomeCpu = (String)k1.GetValue("NomeCpu", "");
                 try
                 {
 
                     secondi = UInt16.Parse((String)k1.GetValue("Secondi", "0"));
-                } catch (System.InvalidCastException ex)
+                }
+                catch (System.InvalidCastException ex)
                 {
                     secondi = 0;
                 }
                 briscolaDaPunti = bool.Parse((String)k1.GetValue("BriscolaDaPunti", "False"));
                 avvisaTalloneFinito = bool.Parse((String)k1.GetValue("AvvisaTalloneFinito", "True"));
-                nomeMazzo=(string)k1.GetValue("Mazzo", "Napoletano");
+                nomeMazzo = (string)k1.GetValue("Mazzo", "Napoletano");
             }
             else
                 k1 = k.CreateSubKey("CBriscola");
 
-            if (nomeUtente=="")
+            if (nomeUtente == "")
             {
                 if (k1 == null)
                 {
@@ -89,7 +90,7 @@ namespace CBriscola.WPF
                 k1.SetValue("NomeCpu", "Cpu");
                 nomeCpu = "Cpu";
             }
-            if (secondi==0)
+            if (secondi == 0)
             {
                 if (k1 == null)
                 {
@@ -102,8 +103,8 @@ namespace CBriscola.WPF
             e = new ElaboratoreCarteBriscola(briscolaDaPunti);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
-            Carta.Inizializza(40, new CartaHelperBriscola(ElaboratoreCarteBriscola.GetCartaBriscola()));
-           if (!Carta.CaricaImmagini(path, m, 40, d))
+            Carta.Inizializza(40, new org.altervista.numerone.framework.briscola.CartaHelper(ElaboratoreCarteBriscola.GetCartaBriscola()));
+            if (!Carta.CaricaImmagini(path, m, 40, d))
                 new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
 
             if (nomeMazzo == "Napoletano")
@@ -159,6 +160,7 @@ namespace CBriscola.WPF
             fpCancel.Content = $"{d["Annulla"]}";
             fpShare.Content = $"{d["Condividi"]}";
             lblinfo.Content = $"{d["info"]}";
+            lbmazzi.Content = $"{d["Mazzo"]}";
             Briscola.Source = briscola.GetImmagine();
             t = new DispatcherTimer();
             t.Interval = TimeSpan.FromSeconds(secondi);
@@ -180,12 +182,21 @@ namespace CBriscola.WPF
                 {
                     NelMazzoRimangono.Content = $"{d["NelMazzoRimangono"]} {m.GetNumeroCarte()} {d["carte"]}";
                     CartaBriscola.Content = $"{d["IlSemeDiBriscolaE"]}: {briscola.GetSemeStr()}";
-                    if (Briscola.IsVisible && m.GetNumeroCarte() == 0)
+                    if (Briscola.IsVisible)
                     {
-                        NelMazzoRimangono.Visibility = Visibility.Collapsed;
-                        Briscola.Visibility = Visibility.Collapsed;
-                        if (m.GetNumeroCarte() == 2 && avvisaTalloneFinito)
-                            new ToastContentBuilder().AddArgument(d["TalloneFinito"] as string).AddText(d["IlTalloneEFinito"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+
+                        switch (m.GetNumeroCarte())
+                        {
+                            case 2:
+                                if (avvisaTalloneFinito)
+                                    new ToastContentBuilder().AddArgument(d["TalloneFinito"] as string).AddText(d["IlTalloneEFinito"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                                break;
+                            case 0:
+                                NelMazzoRimangono.Visibility = Visibility.Collapsed;
+                                Briscola.Visibility = Visibility.Collapsed;
+                                break;
+
+                        }
                     }
                     Utente0.Source = g.GetImmagine(0);
                     if (cpu.GetNumeroCarte() > 1)
@@ -196,15 +207,16 @@ namespace CBriscola.WPF
                     i1.Visibility = Visibility.Visible;
                     Giocata0.Visibility = Visibility.Collapsed;
                     Giocata1.Visibility = Visibility.Collapsed;
-                    if (cpu.GetNumeroCarte() == 2)
+                    switch (cpu.GetNumeroCarte())
                     {
-                        Utente2.Visibility = Visibility.Collapsed;
-                        Cpu2.Visibility = Visibility.Collapsed;
-                    }
-                    if (cpu.GetNumeroCarte() == 1)
-                    {
-                        Utente1.Visibility = Visibility.Collapsed;
-                        Cpu1.Visibility = Visibility.Collapsed;
+                        case 2:
+                            Utente2.Visibility = Visibility.Collapsed;
+                            Cpu2.Visibility = Visibility.Collapsed;
+                            break;
+                        case 1:
+                            Utente1.Visibility = Visibility.Collapsed;
+                            Cpu1.Visibility = Visibility.Collapsed;
+                            break;
                     }
                     if (primo == cpu)
                     {
@@ -231,18 +243,18 @@ namespace CBriscola.WPF
                     }
                     if (partite % 2 == 1)
                     {
-                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}?";
+                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["NuovaPartita"]}";
                         fpShare.Visibility = Visibility.Visible;
                         fpShare.IsEnabled = true;
                     }
                     else
                     {
-                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["EffettuaSecondaPartita"]}?";
+                        fpRisultrato.Content = $"{d["PartitaFinita"]}. {s}. {d["EffettuaSecondaPartita"]}";
                         fpShare.Visibility = Visibility.Collapsed;
                     }
                     Applicazione.Visibility = Visibility.Collapsed;
                     FinePartita.Visibility = Visibility.Visible;
-                    if (partite==UInt128.MaxValue)
+                    if (partite == UInt128.MaxValue)
                     {
                         new ToastContentBuilder().AddArgument("Errore generale").AddText("Non stai giocando troppo?").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                         Application.Current.Shutdown();
@@ -295,7 +307,8 @@ namespace CBriscola.WPF
             try
             {
                 mazzi = new List<String>(Directory.EnumerateDirectories(path));
-            } catch (System.IO.DirectoryNotFoundException ex)
+            }
+            catch (System.IO.DirectoryNotFoundException ex)
             {
                 mazzi = new List<string>();
                 new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["CercaNuoviMazzi"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
@@ -330,7 +343,7 @@ namespace CBriscola.WPF
             e = new ElaboratoreCarteBriscola(cartaBriscola);
             m = new Mazzo(e);
             m.SetNome(nomeMazzo);
-            Carta.SetHelper(new CartaHelperBriscola(ElaboratoreCarteBriscola.GetCartaBriscola()));
+            Carta.SetHelper(new org.altervista.numerone.framework.briscola.CartaHelper(ElaboratoreCarteBriscola.GetCartaBriscola()));
             briscola = Carta.GetCarta(ElaboratoreCarteBriscola.GetCartaBriscola());
             g = new Giocatore(new GiocatoreHelperUtente(), g.GetNome(), 3);
             cpu = new Giocatore(new GiocatoreHelperCpu(ElaboratoreCarteBriscola.GetCartaBriscola()), cpu.GetNome(), 3);
@@ -361,10 +374,6 @@ namespace CBriscola.WPF
             NelMazzoRimangono.Visibility = Visibility.Visible;
             CartaBriscola.Content = $"{d["IlSemeDiBriscolaE"]}: {briscola.GetSemeStr()}";
             CartaBriscola.Visibility = Visibility.Visible;
-            lbmazzi.Content = $"{d["Mazzo"]} :";
-            fpOk.Content = $"{d["Ok"]}";
-            fpCancel.Content = $"{d["Annulla"]}";
-            fpShare.Content = $"{d["Condividi"]}";
             Briscola.Source = briscola.GetImmagine();
             Briscola.Visibility = Visibility.Visible;
             primaUtente = !primaUtente;
@@ -372,7 +381,8 @@ namespace CBriscola.WPF
             {
                 primo = g;
                 secondo = cpu;
-            } else
+            }
+            else
             {
                 primo = cpu;
                 secondo = g;
@@ -429,6 +439,7 @@ namespace CBriscola.WPF
         }
         public void OnOk_Click(Object source, EventArgs evt)
         {
+            UInt16 sec;
             g.SetNome(txtNomeUtente.Text);
             cpu.SetNome(txtCpu.Text);
             if (cbCartaBriscola.IsChecked == false)
@@ -441,20 +452,31 @@ namespace CBriscola.WPF
                 avvisaTalloneFinito = true;
             try
             {
-                secondi = UInt16.Parse(txtSecondi.Text);
+                sec = UInt16.Parse(txtSecondi.Text);
             }
             catch (FormatException ex)
             {
-                txtSecondi.Text = $"{d["ValoreNonValido"]}";
+                new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
                 return;
             }
+            catch (OverflowException ex1)
+            {
+                new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                return;
+            }
+            if (sec < 1 || sec > 10)
+            {
+                new ToastContentBuilder().AddArgument(d["Attenzione"] as string).AddText(d["ValoreNonValido"] as string).AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
+                return;
+            }
+            secondi = sec;
             t.Interval = TimeSpan.FromSeconds(secondi);
             NomeUtente.Content = g.GetNome();
             NomeCpu.Content = cpu.GetNome();
             if (lsmazzi.SelectedValue != null)
             {
                 m.SetNome(lsmazzi.SelectedValue.ToString());
-                if (!Carta.CaricaImmagini(path,m, 40, d))
+                if (!Carta.CaricaImmagini(path, m, 40, d))
                     new ToastContentBuilder().AddArgument((string)d["MazzoIncompleto"] as string).AddText($"{d["CaricatoNapoletano"] as string}").AddAudio(new Uri("ms-winsoundevent:Notification.Reminder")).Show();
 
                 Utente0.Source = g.GetImmagine(0);
@@ -463,7 +485,7 @@ namespace CBriscola.WPF
 
                 briscola = Carta.GetCarta(ElaboratoreCarteBriscola.GetCartaBriscola());
                 Briscola.Source = briscola.GetImmagine();
-                if (m.GetNome() != "Napoletano") 
+                if (m.GetNome() != "Napoletano")
                     cartaCpu.Source = new BitmapImage(new Uri($"{path}{m.GetNome()}\\retro carte pc.png"));
                 else
                     cartaCpu.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/retro carte pc.png"));
@@ -483,7 +505,7 @@ namespace CBriscola.WPF
 
             GOpzioni.Visibility = Visibility.Collapsed;
             Applicazione.Visibility = Visibility.Visible;
-         
+
         }
 
         private void OnFPShare_Click(object sender, EventArgs e)
@@ -502,7 +524,7 @@ namespace CBriscola.WPF
         {
             var psi = new ProcessStartInfo
             {
-                FileName = "https://github.com/numerunix/cbriscola.WPF",
+                FileName = "https://github.com/GiulianoSpaghetti/cbriscola.WPF",
                 UseShellExecute = true
             };
             Process.Start(psi);
