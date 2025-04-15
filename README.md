@@ -7,7 +7,8 @@ Questo gioco dimostra che la teoria dei giochi è vera: l'algorimo brevettato fu
 
 
 ## Video di presentazione
-https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=setyuT
+
+https://photos.app.goo.gl/weGrzWJnXSUPeqfH9
 
 ## Come installare
 ## Su Windows
