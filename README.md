@@ -1,8 +1,13 @@
 ## CBriscola.WPF
-La CBriscola in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
+Quello che avete davanti non è il gioco della briscola come si intende oggi, perché oggi tutti i simulatori di briscola dicono "hai preso l'asso, bravo" e finisce lì. Quello che avete davanti è un simulatore equo e professionale, con punteggio aggiornato in tempo reale, in modo da poter decidere se "rischiare" o meno coscientemente, in WPF, si può installare sia su amd64 che su arm64 e gira nativamente.
+
+Sembra strano a dirsi, ma è hard core (i vecchietti che urlano "guarda che sto piombo a denari" davanti al monitor), perché consente di cambiare in ogni istante l'andamento della partita coscientemente con le proprie scelte.
+
+Questo gioco dimostra che la teoria dei giochi è vera: l'algorimo brevettato funziona su tutti i giochi di carte senza piatto.
+
 
 ## Video di presentazione
-https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=n8fyvb
+https://1drv.ms/u/s!ApmOB0x2yBN0kohq9mwe4xyvJU4m3Q?e=setyuT
 
 ## Come installare
 ## Su Windows
@@ -19,19 +24,10 @@ Per funzionare ha bisogno del .net framework 8.0
 Questa versione della briscola, oramai, supporta i mazzi di carte aggiuntivi della wxBriscola, basta che siano installati in c:\Program Files (x64)\wxBriscola e compariranno per essere selezionati e salvati.
 Il mazzo Napoletano è inserito all'interno dell'eseguibile e quindi sempre e comunque pienamente raggiungibile.
 
+## Bug noti
+
+Quando si modifica il mazzo di gioco con almeno una carta giocata, le carte sul tavolo non vengono cambiate.
+
 ## Donazione
 
 http://numerone.altervista.org/donazioni.php
-
-## Bibliografia
-https://stackoverflow.com/questions/59716856/net-core-3-1-process-startwww-website-com-not-working-in-wpf
-
-https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.enumeratedirectories?view=net-7.0#system-io-directory-enumeratedirectories(system-string)
-
-https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-7.0
-
-https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/send-local-toast?tabs=uwp
-
-https://stackoverflow.com/questions/53141969/registry-currentuser-createsubkey-not-creating-any-sub-key
-
-https://stackoverflow.com/questions/1410092/identify-the-operating-system-details-in-c-sharp
