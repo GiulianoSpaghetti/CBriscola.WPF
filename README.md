@@ -4,7 +4,7 @@
 
 Il WPF è il vecchio modo di programmare della Microsoft ed è dichiarato deprecato, oggi esiste il WinUI3 per Windows, ed il MAUI multipiattaforma.
 
-E' stato dimostrato che basta modificare leggermente il sorgente per far crashare il programma (https://photos.app.goo.gl/aAq2QDR6bdkYvwsi7), per cui questo progetto viene dichiarato DEPRECATO (legacy).
+E' stato dimostrato che basta modificare leggermente il sorgente per far crashare il programma (https://youtu.be/SwiNHwOvLZU), per cui questo progetto viene dichiarato DEPRECATO (legacy).
 
 Vi rimando al nuovo progetto che usa le più moderne tecnologie, tra cui il LINQ: https://github.com/GiulianoSpaghetti/TrumpSuitGame
 
@@ -43,3 +43,4 @@ Quando si modifica il mazzo di gioco con almeno una carta giocata, le carte sul 
 ## Donazione
 
 http://numerone.altervista.org/donazioni.php
+
